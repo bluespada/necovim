@@ -43,6 +43,6 @@ return require("packer").startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter' }
     use { 'folke/trouble.nvim' }
     use { 'neoclide/coc.nvim' , branch = 'release', run=function() 
-        vim.cmd("CocInstall coc-eslint coc-emmet coc-css coc-highlight coc-yaml coc-snippets coc-prettier coc-json coc-tsserver coc-pairs coc-tslint coc-python coc-git coc-stylint coc-neco ultisnips")
+        vim.cmd("CocInstall coc-eslint coc-emmet coc-css coc-highlight coc-yaml coc-snippets coc-prettier coc-json coc-tsserver coc-pairs coc-tslint coc-python coc-git")
     end }
 end)
