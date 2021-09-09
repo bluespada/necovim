@@ -1,6 +1,7 @@
 local opt = vim.opt
 opt.undofile = true
-opt.number = true
+opt.number = false
+opt.relativenumber = true
 opt.tabstop = 4
 opt.softtabstop = 0
 opt.expandtab = true
