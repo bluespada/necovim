@@ -8,7 +8,7 @@ opt.expandtab = true
 opt.shiftwidth = 4
 opt.smarttab = true
 opt.showcmd = true
-opt.mouse = 'a'
+-- opt.mouse = 'a'
 opt.termguicolors = true
 vim.o.completeopt = "menuone,noselect"
 

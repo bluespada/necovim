@@ -30,7 +30,7 @@ return require("packer").startup(function(use)
     use { 'norcalli/nvim-colorizer.lua' }
     use { 'tpope/vim-fugitive' }
     use { 'tpope/vim-surround' }
-    use { 'folke/tokyonight.nvim','arzg/vim-colors-xcode','morhetz/gruvbox','arcticicestudio/nord-vim','sonph/onehalf','joshdick/onedark.vim','sainnhe/sonokai','rakr/vim-one','sainnhe/gruvbox-material','sainnhe/everforest','sickill/vim-monokai','cocopon/iceberg.vim','sainnhe/edge','junegunn/seoul256.vim' }
+    use { 'folke/tokyonight.nvim','arzg/vim-colors-xcode','morhetz/gruvbox','arcticicestudio/nord-vim','sonph/onehalf','joshdick/onedark.vim','sainnhe/sonokai','rakr/vim-one','sainnhe/gruvbox-material','sainnhe/everforest','sickill/vim-monokai','cocopon/iceberg.vim','sainnhe/edge','junegunn/seoul256.vim','ayu-theme/ayu-vim' }
     use { 'preservim/nerdtree' , 'preservim/nerdcommenter' }
     use { 'junegunn/fzf.vim' }
     use { 'jreybert/vimagit' }
