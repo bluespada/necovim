@@ -42,5 +42,7 @@ return require("packer").startup(function(use)
     use { 'folke/twilight.nvim', 'folke/zen-mode.nvim' } -- @class zen-mode and dim inactive code
     use { 'nvim-treesitter/nvim-treesitter' }
     use { 'folke/trouble.nvim' }
-    use { 'calviken/vim-gdscript3' , {'habamax/vim-godot'}}
+    use { 'neoclide/coc.nvim' , branch = 'release', run=function() 
+        vim.cmd("CocInstall coc-eslint coc-emmet coc-css coc-highlight coc-yaml coc-snippets coc-prettier coc-json coc-tsserver coc-pairs coc-tslint coc-python coc-git")
+    end }
 end)

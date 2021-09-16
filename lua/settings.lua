@@ -67,6 +67,3 @@ require'twilight'.setup {
 
 -- zen mode
 require'zen-mode'.setup{}
-
--- godot
-vim.cmd("let g:godot_executable = '/usr/bin/godot'")
