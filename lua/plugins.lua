@@ -24,25 +24,24 @@ packer.init {
 }
 
 return require("packer").startup(function(use)
-    use "wbthomason/packer.nvim"
-    use {"famiu/nvim-reload",requires={'nvim-lua/plenary.nvim',opt=true}}
-    use { 'ryanoasis/vim-devicons' }
-    use { 'norcalli/nvim-colorizer.lua' }
-    use { 'tpope/vim-fugitive' }
-    use { 'tpope/vim-surround' }
-    use { 'folke/tokyonight.nvim','arzg/vim-colors-xcode','morhetz/gruvbox','arcticicestudio/nord-vim','sonph/onehalf','joshdick/onedark.vim','sainnhe/sonokai','rakr/vim-one','sainnhe/gruvbox-material','sainnhe/everforest','sickill/vim-monokai','cocopon/iceberg.vim','sainnhe/edge','junegunn/seoul256.vim','ayu-theme/ayu-vim' }
-    use { 'preservim/nerdtree' , 'preservim/nerdcommenter' }
-    use { 'junegunn/fzf.vim' }
-    use { 'jreybert/vimagit' }
-    use { 'glepnir/dashboard-nvim' }
-    use { 'hoob3rt/lualine.nvim',requires = {'kyazdani42/nvim-web-devicons', opt = true } }
-    use { 'akinsho/nvim-bufferline.lua' }
-    use { 'psliwka/vim-smoothie' }
-    use { 'wfxr/minimap.vim','Xuyuanp/scrollbar.nvim' }
-    use { 'folke/twilight.nvim', 'folke/zen-mode.nvim' } -- @class zen-mode and dim inactive code
+    use 'wbthomason/packer.nvim' -- packer 
+    use { 'famiu/nvim-reload', requires= { 'nvim-lua/plenary.nvim', opt=true} } -- reload plugins
+    use { 'ryanoasis/vim-devicons' } -- vim icons
+    use { 'norcalli/nvim-colorizer.lua' } -- colorizer
+    use { 'tpope/vim-fugitive' } -- git utils
+    use { 'cohama/lexima.vim' } -- autoclose plugins
+    use { 'morhetz/gruvbox','joshdick/onedark.vim','ayu-theme/ayu-vim' } -- theme
+    use { 'preservim/nerdtree' , 'preservim/nerdcommenter' } -- file & commenter
+    use { 'junegunn/fzf.vim' } -- fzf plugins 
+    use { 'glepnir/dashboard-nvim' } -- dashboard
+    use { 'hoob3rt/lualine.nvim',requires = {'kyazdani42/nvim-web-devicons', opt = true } } -- bar plugins
+    use { 'akinsho/nvim-bufferline.lua' } -- tabline plugins
+    use { 'psliwka/vim-smoothie' } -- smooth scrolls
+    use { 'wfxr/minimap.vim','Xuyuanp/scrollbar.nvim' } -- scroll plugins 
+    use { 'folke/twilight.nvim', 'folke/zen-mode.nvim' } -- zen-mode and dim inactive code
     use { 'nvim-treesitter/nvim-treesitter' }
-    use { 'folke/trouble.nvim' }
     use { 'neoclide/coc.nvim' , branch = 'release', run=function() 
         vim.cmd("CocInstall coc-eslint coc-emmet coc-css coc-highlight coc-yaml coc-snippets coc-prettier coc-json coc-tsserver coc-pairs coc-tslint coc-python coc-git")
-    end }
+    end } -- Coc 
+    use { 'vimwiki/vimwiki' } -- wiki plugins use as notes
 end)
