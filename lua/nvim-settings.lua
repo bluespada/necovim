@@ -1,7 +1,7 @@
 local opt = vim.opt
 -- undofiles
 opt.undofile = true
-
+opt.completeopt='menuone,noinsert,noselect'
 -- configuration tab
 opt.tabstop = 4
 opt.softtabstop = 0

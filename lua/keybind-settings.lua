@@ -41,7 +41,7 @@ map('n','<Down>','<nop>',{silent=true,noremap=true})
 map('n','<Right>','<nop>',{silent=true,noremap=true})
 -- minimap toggle
 map('n','<leader>tm',':MinimapToggle<CR>',{silent=true,noremap=true})
--- Increment/Decrement
+-- Inrement/Decrement
 map('n','<C-a>',':-<CR>',{silent=true,noremap=true})
 map('n','<C-x>',':+<CR>',{silent=true,noremap=true})
 
