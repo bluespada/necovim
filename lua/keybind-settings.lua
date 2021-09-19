@@ -32,16 +32,10 @@ map('n','<C-S-Right>',':BufferLineMoveNext<CR>',{silent=true,noremap=true})
 map('n','<C-S-Left>',':BufferLineMovePrev<CR>',{silent=true,noremap=true})
 map('n','<C-Right>',':BufferLineCycleNext<CR>',{silent=true,noremap=true})
 map('n','<C-Left>',':BufferLineCycleNext<CR>',{silent=true,noremap=true})
--- disable arrow movement
--- this is for my habits to use hjkl
--- if you wanna enable this you can comment all map belows
-map('n','<Left>','<nop>',{silent=true,noremap=true})
-map('n','<Up>','<nop>',{silent=true,noremap=true})
-map('n','<Down>','<nop>',{silent=true,noremap=true})
-map('n','<Right>','<nop>',{silent=true,noremap=true})
 -- minimap toggle
 map('n','<leader>tm',':MinimapToggle<CR>',{silent=true,noremap=true})
 -- Inrement/Decrement
 map('n','<C-a>',':-<CR>',{silent=true,noremap=true})
 map('n','<C-x>',':+<CR>',{silent=true,noremap=true})
-
+-- codeactions
+map('n','gh',':Lspsaga lsp_finder<CR>',{ silent=true,noremap=true })

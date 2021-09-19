@@ -15,13 +15,12 @@ require'nvim-treesitter.configs'.setup {
 -- lsp
 require'lspinstall'.setup()
 
+require'config.codeaction'
+
 local servers = require'lspinstall'.installed_servers()
 for _, server in pairs(servers) do
     require'lspconfig'[server].setup{ on_attach=require'completion'.on_attach }
 end
-
--- navigator
-require'config.navigator'
 
 -- buffer line
 require'bufferline'.setup {}

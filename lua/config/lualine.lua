@@ -69,7 +69,7 @@ end
 
 ins_left {
   function() return '▊' end,
-  color = {fg = colors.blue}, -- Sets highlighting of component
+  color = {fg = colors.green}, -- Sets highlighting of component
   left_padding = 0 -- We don't need space before this
 }
 
@@ -78,8 +78,8 @@ ins_left {
   function()
     -- auto change color according to neovims mode
     local mode_color = {
-      n = colors.red,
-      i = colors.green,
+      n = colors.green,
+      i = colors.red,
       v = colors.blue,
       [''] = colors.blue,
       V = colors.blue,
@@ -101,7 +101,7 @@ ins_left {
     }
     vim.api.nvim_command(
         'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()])
-    return ''
+    return ' '
   end,
   color = "LualineMode",
   left_padding = 0
@@ -109,7 +109,7 @@ ins_left {
 
 ins_left {
   'branch',
-  icon = '',
+  icon = '',
   condition = conditions.check_git_workspace,
   color = {fg = colors.violet, gui = 'bold'}
 }
@@ -123,7 +123,7 @@ ins_left {
 ins_left {
   'diff',
   -- Is it me or the symbol for modified us really weird
-  symbols = {added = ' ', modified = '柳 ', removed = ' '},
+  symbols = {added = '  ', modified = '  ', removed = '  '},
   color_added = colors.green,
   color_modified = colors.orange,
   color_removed = colors.red,
@@ -187,7 +187,7 @@ ins_right {
     local function format_file_size(file)
       local size = vim.fn.getfsize(file)
       if size <= 0 then return '' end
-      local sufixes = {'b', 'k', 'm', 'g'}
+      local sufixes = {'B', 'KB', 'MB', 'GB'}
       local i = 1
       while size > 1024 do
         size = size / 1024
@@ -199,17 +199,18 @@ ins_right {
     if string.len(file) == 0 then return '' end
     return format_file_size(file)
   end,
-  condition = conditions.buffer_not_empty
+  condition = conditions.buffer_not_empty,
+  icon = ''
 }
 
-ins_right {'location'}
+ins_right {'location' , icon = '﫴'}
 
 ins_right {'progress', color = {fg = colors.fg, gui = 'bold'}}
 
 
 ins_right {
   function() return '▊' end,
-  color = {fg = colors.blue},
+  color = {fg = colors.green},
   right_padding = 0
 }
 

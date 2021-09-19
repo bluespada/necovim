@@ -42,8 +42,8 @@ return require("packer").startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter' } -- treesitter
     use { 'neovim/nvim-lspconfig' } -- lspconfig
     use { 'kabouzeid/nvim-lspinstall' } -- lspinstall
-    use { 'ray-x/navigator.lua' , requires = { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' } } -- lsp navigator | for codeactions
     use { 'nvim-lua/completion-nvim'  }
+    use { 'glepnir/lspsaga.nvim',requires={ 'neovim/nvim-lspconfig' } } -- codeactions
     -- disable coc , and use LSP Instead
 
     -- use { 'neoclide/coc.nvim' , branch = 'release', run=function()
