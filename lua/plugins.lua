@@ -24,7 +24,7 @@ packer.init {
 }
 
 return require("packer").startup(function(use)
-    use 'wbthomason/packer.nvim' -- packer 
+    use 'wbthomason/packer.nvim' -- packer
     use { 'famiu/nvim-reload', requires= { 'nvim-lua/plenary.nvim', opt=true} } -- reload plugins
     use { 'ryanoasis/vim-devicons' } -- vim icons
     use { 'norcalli/nvim-colorizer.lua' } -- colorizer
@@ -32,25 +32,23 @@ return require("packer").startup(function(use)
     use { 'cohama/lexima.vim' } -- autoclose plugins
     use { 'morhetz/gruvbox','joshdick/onedark.vim','ayu-theme/ayu-vim' } -- theme
     use { 'preservim/nerdtree' , 'preservim/nerdcommenter' } -- file & commenter
-     
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- telescope
     use { 'glepnir/dashboard-nvim' } -- dashboard
     use { 'hoob3rt/lualine.nvim',requires = {'kyazdani42/nvim-web-devicons', opt = true } } -- bar plugins
     use { 'akinsho/nvim-bufferline.lua' } -- tabline plugins
     use { 'psliwka/vim-smoothie' } -- smooth scrolls
-    use { 'wfxr/minimap.vim','Xuyuanp/scrollbar.nvim' } -- scroll plugins 
+    use { 'wfxr/minimap.vim','Xuyuanp/scrollbar.nvim' } -- scroll plugins
     use { 'folke/twilight.nvim', 'folke/zen-mode.nvim' } -- zen-mode and dim inactive code
-    use { 'nvim-treesitter/nvim-treesitter' }
-    use { 'neovim/nvim-lspconfig' }
-    use { 'kabouzeid/nvim-lspinstall' }
-    use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
+    use { 'nvim-treesitter/nvim-treesitter' } -- treesitter
+    use { 'neovim/nvim-lspconfig' } -- lspconfig
+    use { 'kabouzeid/nvim-lspinstall' } -- lspinstall
+    use {'ray-x/navigator.lua' , opt = true , requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}} -- lsp navigator | for codeactions
 
     -- disable coc , and use LSP Instead
 
-    -- use { 'neoclide/coc.nvim' , branch = 'release', run=function() 
+    -- use { 'neoclide/coc.nvim' , branch = 'release', run=function()
     --    vim.cmd("CocInstall coc-eslint coc-emmet coc-css coc-highlight coc-yaml coc-snippets coc-prettier coc-json coc-tsserver coc-pairs coc-tslint coc-python coc-git")
-    -- end } -- Coc 
-    
+    -- end } -- Coc
     use { 'vimwiki/vimwiki' } -- wiki plugins use as notes
     use { 'matze/vim-move' } -- move line
 end)
