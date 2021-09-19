@@ -108,6 +108,80 @@ ins_left {
 }
 
 ins_left {
+  'branch',
+  icon = '',
+  condition = conditions.check_git_workspace,
+  color = {fg = colors.violet, gui = 'bold'}
+}
+
+ins_left {
+  'filename',
+  condition = conditions.buffer_not_empty,
+  color = {fg = colors.magenta}
+}
+
+ins_left {
+  'diff',
+  -- Is it me or the symbol for modified us really weird
+  symbols = {added = ' ', modified = '柳 ', removed = ' '},
+  color_added = colors.green,
+  color_modified = colors.orange,
+  color_removed = colors.red,
+  condition = conditions.hide_in_width
+}
+
+
+
+
+
+-- Insert mid section. You can make any number of sections in neovim :)
+-- for lualine it's any number greater then 2
+ins_left {function() return '%=' end}
+
+ins_right {
+  -- Lsp server name .
+  function()
+    local msg = 'No Active Lsp'
+    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local clients = vim.lsp.get_active_clients()
+    if next(clients) == nil then return msg end
+    for _, client in ipairs(clients) do
+      local filetypes = client.config.filetypes
+      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+        return client.name
+      end
+    end
+    return msg
+  end,
+  icon = ' ',
+  color = {fg = colors.fg}
+}
+
+ins_right {
+  'diagnostics',
+  sources = {'nvim_lsp'},
+  symbols = {error = ' ', warn = ' ', info = ' '},
+  color_error = colors.red,
+  color_warn = colors.yellow,
+  color_info = colors.cyan
+}
+
+-- Add components to right sections
+ins_right {
+  'o:encoding', -- option component same as &encoding in viml
+  upper = true, -- I'm not sure why it's upper case either ;)
+  condition = conditions.hide_in_width,
+  color = {fg = colors.green, gui = 'bold'}
+}
+
+ins_right {
+  'fileformat',
+  upper = true,
+  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+  color = {fg = colors.green, gui = 'bold'}
+}
+
+ins_right {
   -- filesize component
   function()
     local function format_file_size(file)
@@ -128,79 +202,10 @@ ins_left {
   condition = conditions.buffer_not_empty
 }
 
-ins_left {
-  'filename',
-  condition = conditions.buffer_not_empty,
-  color = {fg = colors.magenta}
-}
+ins_right {'location'}
 
-ins_left {'location'}
+ins_right {'progress', color = {fg = colors.fg, gui = 'bold'}}
 
-ins_left {'progress', color = {fg = colors.fg, gui = 'bold'}}
-
-ins_left {
-  'diagnostics',
-  sources = {'nvim_lsp'},
-  symbols = {error = ' ', warn = ' ', info = ' '},
-  color_error = colors.red,
-  color_warn = colors.yellow,
-  color_info = colors.cyan
-}
-
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-ins_left {function() return '%=' end}
-
-ins_left {
-  -- Lsp server name .
-  function()
-    local msg = 'No Active Lsp'
-    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-    local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then return msg end
-    for _, client in ipairs(clients) do
-      local filetypes = client.config.filetypes
-      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return client.name
-      end
-    end
-    return msg
-  end,
-  icon = '  LSP :',
-  color = {fg = colors.fg}
-}
-
--- Add components to right sections
-ins_right {
-  'o:encoding', -- option component same as &encoding in viml
-  upper = true, -- I'm not sure why it's upper case either ;)
-  condition = conditions.hide_in_width,
-  color = {fg = colors.green, gui = 'bold'}
-}
-
-ins_right {
-  'fileformat',
-  upper = true,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = {fg = colors.green, gui = 'bold'}
-}
-
-ins_right {
-  'branch',
-  icon = '',
-  condition = conditions.check_git_workspace,
-  color = {fg = colors.violet, gui = 'bold'}
-}
-
-ins_right {
-  'diff',
-  -- Is it me or the symbol for modified us really weird
-  symbols = {added = ' ', modified = '柳 ', removed = ' '},
-  color_added = colors.green,
-  color_modified = colors.orange,
-  color_removed = colors.red,
-  condition = conditions.hide_in_width
-}
 
 ins_right {
   function() return '▊' end,

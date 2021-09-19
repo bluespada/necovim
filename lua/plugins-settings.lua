@@ -2,7 +2,7 @@
 require'colorizer'.setup {}
 
 -- lualine
-require'necovim_bar'
+require'config/lualine'
 
 -- treesitter
 require'nvim-treesitter.configs'.setup {
@@ -21,7 +21,7 @@ for _, server in pairs(servers) do
 end
 
 -- navigator
-require'navigator'.setup {  }
+require'config.navigator'
 
 -- buffer line
 require'bufferline'.setup {}
