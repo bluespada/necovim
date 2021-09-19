@@ -40,9 +40,13 @@ return require("packer").startup(function(use)
     use { 'wfxr/minimap.vim','Xuyuanp/scrollbar.nvim' } -- scroll plugins 
     use { 'folke/twilight.nvim', 'folke/zen-mode.nvim' } -- zen-mode and dim inactive code
     use { 'nvim-treesitter/nvim-treesitter' }
-    use { 'neoclide/coc.nvim' , branch = 'release', run=function() 
-        vim.cmd("CocInstall coc-eslint coc-emmet coc-css coc-highlight coc-yaml coc-snippets coc-prettier coc-json coc-tsserver coc-pairs coc-tslint coc-python coc-git")
-    end } -- Coc 
+
+    -- disable coc , and use LSP Instead
+
+    -- use { 'neoclide/coc.nvim' , branch = 'release', run=function() 
+    --    vim.cmd("CocInstall coc-eslint coc-emmet coc-css coc-highlight coc-yaml coc-snippets coc-prettier coc-json coc-tsserver coc-pairs coc-tslint coc-python coc-git")
+    -- end } -- Coc 
+    
     use { 'vimwiki/vimwiki' } -- wiki plugins use as notes
     use { 'matze/vim-move' } -- move line
 end)
