@@ -44,4 +44,5 @@ return require("packer").startup(function(use)
         vim.cmd("CocInstall coc-eslint coc-emmet coc-css coc-highlight coc-yaml coc-snippets coc-prettier coc-json coc-tsserver coc-pairs coc-tslint coc-python coc-git")
     end } -- Coc 
     use { 'vimwiki/vimwiki' } -- wiki plugins use as notes
+    use { 'matze/vim-move' } -- move line
 end)

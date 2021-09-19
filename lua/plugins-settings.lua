@@ -80,3 +80,6 @@ vim.g.vimwiki_list = {{
     ext = '.wiki' -- i use wiki extension but if u want you can change it to .md files 
     -- for more informations you can see : https://github.com/vimwiki/vimwiki
 }}
+
+-- move line config
+vim.g.move_key_modifier = 'C'
