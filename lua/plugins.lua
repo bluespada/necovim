@@ -41,6 +41,9 @@ return require("packer").startup(function(use)
     use { 'wfxr/minimap.vim','Xuyuanp/scrollbar.nvim' } -- scroll plugins 
     use { 'folke/twilight.nvim', 'folke/zen-mode.nvim' } -- zen-mode and dim inactive code
     use { 'nvim-treesitter/nvim-treesitter' }
+    use { 'neovim/nvim-lspconfig' }
+    use { 'kabouzeid/nvim-lspinstall' }
+    use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
 
     -- disable coc , and use LSP Instead
 
