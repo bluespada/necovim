@@ -20,9 +20,11 @@ map('n','<leader>dn',':DashboardNewFile<CR>',{silent=true,noremap=true})
 map('n','<leader>z',':ZenMode<CR>',{silent=true,noremap=true})
 map('n','<leader>tw',':Twilight<CR>',{silent=true,noremap=true})
 map('n','<C-c>',':bd<CR>',{silent=true,noremap=true})
-map('n','gh',":CocFix<CR>",{silent=true,noremap=true})
--- find line
-map('n','<leader>fl',':Lines<CR>',{silent=true,noremap=true})
+-- telescope keybind
+map('n','<leader>ff',':Telescope find_files<CR>',{silent=true,noremap=true})
+map('n','<leader>fg',':Telescope live_grep<CR>',{silent=true,noremap=true})
+map('n','<leader>fb',':Telescope buffers<CR>',{silent=true,noremap=true})
+map('n','<leader>fh',':Telescope hep_tags<CR>',{silent=true,noremap=true})
 -- save shortcuts
 map('n','<leader>ss',':w!<CR>',{silent=true,noremap=true})
 -- buffer move

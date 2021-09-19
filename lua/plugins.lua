@@ -32,7 +32,8 @@ return require("packer").startup(function(use)
     use { 'cohama/lexima.vim' } -- autoclose plugins
     use { 'morhetz/gruvbox','joshdick/onedark.vim','ayu-theme/ayu-vim' } -- theme
     use { 'preservim/nerdtree' , 'preservim/nerdcommenter' } -- file & commenter
-    use { 'junegunn/fzf.vim' } -- fzf plugins 
+     
+    use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- telescope
     use { 'glepnir/dashboard-nvim' } -- dashboard
     use { 'hoob3rt/lualine.nvim',requires = {'kyazdani42/nvim-web-devicons', opt = true } } -- bar plugins
     use { 'akinsho/nvim-bufferline.lua' } -- tabline plugins
