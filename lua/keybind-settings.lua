@@ -30,8 +30,8 @@ map('n','<leader>ss',':w!<CR>',{silent=true,noremap=true})
 -- buffer move
 map('n','<C-S-Right>',':BufferLineMoveNext<CR>',{silent=true,noremap=true})
 map('n','<C-S-Left>',':BufferLineMovePrev<CR>',{silent=true,noremap=true})
-map('n','<C-Right>',':BufferLineCycleNext<CR>',{silent=true,noremap=true})
-map('n','<C-Left>',':BufferLineCycleNext<CR>',{silent=true,noremap=true})
+map('n','<C-Right>',':bNext<CR>',{silent=true,noremap=true})
+map('n','<C-Left>',':bprevious<CR>',{silent=true,noremap=true})
 -- minimap toggle
 map('n','<leader>tm',':MinimapToggle<CR>',{silent=true,noremap=true})
 -- Inrement/Decrement
@@ -39,3 +39,4 @@ map('n','<C-a>',':-<CR>',{silent=true,noremap=true})
 map('n','<C-x>',':+<CR>',{silent=true,noremap=true})
 -- codeactions
 map('n','gh',':Lspsaga lsp_finder<CR>',{ silent=true,noremap=true })
+map('n','ca',':Lspsaga code_action<CR>',{ silent=true,noremap=true })

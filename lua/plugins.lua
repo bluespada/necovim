@@ -42,7 +42,7 @@ return require("packer").startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter' } -- treesitter
     use { 'neovim/nvim-lspconfig' } -- lspconfig
     use { 'kabouzeid/nvim-lspinstall' } -- lspinstall
-    use { 'nvim-lua/completion-nvim'  }
+    use { 'nvim-lua/completion-nvim'  } -- completion
     use { 'glepnir/lspsaga.nvim',requires={ 'neovim/nvim-lspconfig' } } -- codeactions
     -- disable coc , and use LSP Instead
 
