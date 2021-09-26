@@ -1,5 +1,9 @@
 -- colorizer
-require'colorizer'.setup {}
+require'colorizer'.setup {
+    -- enable colorizer for all files
+    '*';
+    -- '!vim' -- uncomment this if u want exclude colorizer be run on file.
+}
 
 -- lualine
 require'config/lualine'
@@ -14,6 +18,14 @@ require'nvim-treesitter.configs'.setup {
 
 -- lsp
 require'lspinstall'.setup()
+
+-- settings flutter-tools
+require'flutter-tools'.setup {
+    flutter_path = "/opt/flutter/bin/flutter",
+    lsp = {
+        on_attach = require'completion'.on_attach
+    }
+}
 
 require'config.codeaction'
 
@@ -108,3 +120,4 @@ vim.g.vimwiki_list = {{
 
 -- move line config
 vim.g.move_key_modifier = 'C'
+
