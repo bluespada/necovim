@@ -14,3 +14,4 @@ Necovim is a my neovim configurations file , included plugins , keybindings , se
 
 * In build LSP.
 * Native Lua scripts.
+* Inbuild Flutter developers tools.
