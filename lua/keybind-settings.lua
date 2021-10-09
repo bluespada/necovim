@@ -30,8 +30,8 @@ map('n','<leader>ss',':w!<CR>',{silent=true,noremap=true})
 -- buffer move
 map('n','<C-S-Right>',':BufferLineMoveNext<CR>',{silent=true,noremap=true})
 map('n','<C-S-Left>',':BufferLineMovePrev<CR>',{silent=true,noremap=true})
-map('n','<C-Right>',':bNext<CR>',{silent=true,noremap=true})
-map('n','<C-Left>',':bprevious<CR>',{silent=true,noremap=true})
+map('n','<C-S-l>',':bNext<CR>',{silent=true,noremap=true})
+map('n','<C-S-h>',':bprevious<CR>',{silent=true,noremap=true})
 -- minimap toggle
 map('n','<leader>tm',':MinimapToggle<CR>',{silent=true,noremap=true})
 -- Inrement/Decrement
@@ -40,6 +40,6 @@ map('n','<C-x>',':+<CR>',{silent=true,noremap=true})
 -- codeactions
 map('n','cf',':Lspsaga lsp_finder<CR>',{ silent=true,noremap=true })
 map('n','ca',':Lspsaga code_action<CR>',{ silent=true,noremap=true })
-map('n','J',':Lspsaga hover_doc<CR>',{ silent=true,noremap=true })
-map('n','K',':Lspsaga show_cursor_diagnostics<CR>',{ silent=true , noremap=true  })
-map('n','L',':Lspsaga preview_definition<CR>',{ silent=true,noremap=true })
+map('n','cd',':Lspsaga hover_doc<CR>',{ silent=true,noremap=true })
+map('n','cs',':Lspsaga show_cursor_diagnostics<CR>',{ silent=true , noremap=true  })
+map('n','cz',':Lspsaga preview_definition<CR>',{ silent=true,noremap=true })

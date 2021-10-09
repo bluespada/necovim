@@ -15,6 +15,7 @@ opt.mouse = 'a'
 opt.showcmd = true
 opt.termguicolors = true
 opt.number = true
+opt.relativenumber = true
 opt.autoindent = true
 opt.background = 'dark'
 opt.shell='zsh'

@@ -46,6 +46,7 @@ return require("packer").startup(function(use)
     use { 'glepnir/lspsaga.nvim',requires={ 'neovim/nvim-lspconfig' } } -- codeactions
     -- disable coc , and use LSP Instead
     use {'akinsho/flutter-tools.nvim', requires = { 'nvim-lua/plenary.nvim' , 'mfussenegger/nvim-dap' } } -- flutter langugae support (sometime i have a flutter projects)
+    use { 'khaveesh/vim-fish-syntax' } -- fish shell highlighting
 
     -- use { 'neoclide/coc.nvim' , branch = 'release', run=function()
     --    vim.cmd("CocInstall coc-eslint coc-emmet coc-css coc-highlight coc-yaml coc-snippets coc-prettier coc-json coc-tsserver coc-pairs coc-tslint coc-python coc-git")

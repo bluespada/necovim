@@ -9,3 +9,8 @@ Necovim is a my neovim configurations file , included plugins , keybindings , se
 * Before open nvim you need install code-minimap from cargo (Rust Package Manager) because i use minimap plugins see about [code minimap](https://github.com/wfxr/minimap.vim).
 * After install code-minimap you can open neovim and wait for more second until all plugins installed or you can type `:PackerInstall` for install all plugins.
 * Happy hacking :)
+
+## FEATURES
+
+* In build LSP.
+* Native Lua scripts.
