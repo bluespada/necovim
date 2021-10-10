@@ -43,3 +43,5 @@ map('n','ca',':Lspsaga code_action<CR>',{ silent=true,noremap=true })
 map('n','cd',':Lspsaga hover_doc<CR>',{ silent=true,noremap=true })
 map('n','cs',':Lspsaga show_cursor_diagnostics<CR>',{ silent=true , noremap=true  })
 map('n','cz',':Lspsaga preview_definition<CR>',{ silent=true,noremap=true })
+-- ranger
+map('n','<leader>dff',':Ranger<CR>',{ silent = true, noremap = true })

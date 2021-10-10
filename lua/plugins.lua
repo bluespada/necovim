@@ -44,6 +44,7 @@ return require("packer").startup(function(use)
     use { 'kabouzeid/nvim-lspinstall' } -- lspinstall
     use { 'nvim-lua/completion-nvim'  } -- completion
     use { 'glepnir/lspsaga.nvim',requires={ 'neovim/nvim-lspconfig' } } -- codeactions
+    use { 'onsails/lspkind-nvim' } -- lsp kind
     -- disable coc , and use LSP Instead
     use {'akinsho/flutter-tools.nvim', requires = { 'nvim-lua/plenary.nvim' , 'mfussenegger/nvim-dap' } } -- flutter langugae support (sometime i have a flutter projects)
     use { 'khaveesh/vim-fish-syntax' } -- fish shell highlighting
@@ -53,4 +54,5 @@ return require("packer").startup(function(use)
     -- end } -- Coc
     use { 'vimwiki/vimwiki' } -- wiki plugins use as notes
     use { 'matze/vim-move' } -- move line
+    use { 'francoiscabrol/ranger.vim' } -- vim ranger
 end)
