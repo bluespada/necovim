@@ -30,8 +30,8 @@ map('n','<leader>ss',':w!<CR>',{silent=true,noremap=true})
 -- buffer move
 map('n','<C-S-Right>',':BufferLineMoveNext<CR>',{silent=true,noremap=true})
 map('n','<C-S-Left>',':BufferLineMovePrev<CR>',{silent=true,noremap=true})
-map('n','<A-S-l>',':bnext<CR>',{silent=true,noremap=true})
-map('n','<A-S-h>',':bprevious<CR>',{silent=true,noremap=true})
+map('n','<A-l>',':bnext<CR>',{silent=true,noremap=true})
+map('n','<A-h>',':bprevious<CR>',{silent=true,noremap=true})
 -- minimap toggle
 map('n','<leader>tm',':MinimapToggle<CR>',{silent=true,noremap=true})
 -- Inrement/Decrement
