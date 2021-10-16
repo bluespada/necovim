@@ -45,6 +45,7 @@ return require("packer").startup(function(use)
     use { 'nvim-lua/completion-nvim'  } -- completion
     use { 'glepnir/lspsaga.nvim',requires={ 'neovim/nvim-lspconfig' } } -- codeactions
     use { 'onsails/lspkind-nvim' } -- lsp kind
+    use { 'williamboman/nvim-lsp-installer' } -- lsp auto installer
     -- disable coc , and use LSP Instead
     use {'akinsho/flutter-tools.nvim', requires = { 'nvim-lua/plenary.nvim' , 'mfussenegger/nvim-dap' } } -- flutter langugae support (sometime i have a flutter projects)
     use { 'khaveesh/vim-fish-syntax' } -- fish shell highlighting

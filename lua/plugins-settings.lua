@@ -18,6 +18,7 @@ require'nvim-treesitter.configs'.setup {
 
 -- lsp
 require'lspinstall'.setup()
+require'config/lsp-config'
 
 -- settings flutter-tools
 require'flutter-tools'.setup {
