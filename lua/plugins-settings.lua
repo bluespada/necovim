@@ -18,7 +18,6 @@ require'nvim-treesitter.configs'.setup {
 
 -- lsp
 require'lspinstall'.setup()
-require'config/lsp-config'
 
 -- settings flutter-tools
 require'flutter-tools'.setup {
@@ -45,6 +44,8 @@ require'lspinstall'.post_install_hook = function ()
   setup_servers() -- reload installed servers
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
+
+require'config/lsp-config'
 
 -- lps kind
 require'lspkind'.init {  }
