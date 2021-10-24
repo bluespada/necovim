@@ -17,38 +17,8 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- lsp
-require'lspinstall'.setup()
-
--- settings flutter-tools
-require'flutter-tools'.setup {
-    flutter_path = "/opt/flutter/bin/flutter",
-    lsp = {
-        on_attach = require'completion'.on_attach
-    }
-}
-
-require'config.codeaction'
-
-local function setup_servers()
-  require'lspinstall'.setup()
-  local servers = require'lspinstall'.installed_servers()
-  for _, server in pairs(servers) do
-    require'lspconfig'[server].setup{ on_attach=require'completion'.on_attach }
-  end
-end
-
-setup_servers()
-
--- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require'lspinstall'.post_install_hook = function ()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-end
-
 require'config/lsp-config'
 
--- lps kind
-require'lspkind'.init {  }
 -- buffer line
 require'bufferline'.setup {}
 
