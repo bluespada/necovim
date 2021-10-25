@@ -9,7 +9,7 @@ opt.expandtab = true
 opt.shiftwidth = 4 
 opt.ai = true
 opt.si = true
-
+               
 -- general configurations
 opt.mouse = 'a'
 opt.showcmd = true
@@ -22,6 +22,7 @@ opt.shell='fish'
 opt.title = false
 opt.encoding = 'utf-8'
 opt.cursorline = true
+opt.list = true
 
 vim.cmd([[
 autocmd!

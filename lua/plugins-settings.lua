@@ -4,7 +4,6 @@ require'colorizer'.setup {
     '*';
     -- '!vim' -- uncomment this if u want exclude colorizer be run on file.
 }
-
 -- lualine
 require'config/lualine'
 
@@ -12,7 +11,12 @@ require'config/lualine'
 require'nvim-treesitter.configs'.setup {
     ensure_installed = { 'tsx','vim','dart','cpp','c','python','lua','bash','javascript','css','html','php','typescript' },
     highlight = {
-        enable = true
+        enable = true,
+        disable = {}
+    },
+    indent = {
+        enable = false,
+        disable = {}
     }
 }
 
@@ -95,3 +99,9 @@ vim.g.vimwiki_list = {{
 -- move line config
 vim.g.move_key_modifier = 'C'
 
+-- indent line
+require'indent_blankline'.setup { 
+    char = '|',
+    buftype_exclude = { 'terminal','dashboard','sagahover','help','NvimTree' },
+    show_end_of_line = true,
+}

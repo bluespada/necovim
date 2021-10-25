@@ -46,6 +46,7 @@ return require("packer").startup(function(use)
     use { 'glepnir/lspsaga.nvim',requires={ 'neovim/nvim-lspconfig' } } -- codeactions
     use { 'onsails/lspkind-nvim' } -- lsp kind
     use { 'williamboman/nvim-lsp-installer' } -- lsp auto installer
+    use { 'ray-x/lsp_signature.nvim' } -- lsp signature
     -- disable coc , and use LSP Instead
     use {'akinsho/flutter-tools.nvim', requires = { 'nvim-lua/plenary.nvim' , 'mfussenegger/nvim-dap' } } -- flutter langugae support (sometime i have a flutter projects)
     use { 'khaveesh/vim-fish-syntax' } -- fish shell highlighting
@@ -56,4 +57,7 @@ return require("packer").startup(function(use)
     use { 'vimwiki/vimwiki' } -- wiki plugins use as notes
     use { 'matze/vim-move' } -- move line
     use { 'francoiscabrol/ranger.vim' } -- vim ranger
+    -- utilities
+    use { 'jghauser/mkdir.nvim', config=function() require'mkdir' end } -- makedir when folder not exist
+    use { 'lukas-reineke/indent-blankline.nvim' } -- indent line
 end)
