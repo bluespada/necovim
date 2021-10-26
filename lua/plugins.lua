@@ -30,7 +30,7 @@ return require("packer").startup(function(use)
     use { 'norcalli/nvim-colorizer.lua' } -- colorizer
     use { 'tpope/vim-fugitive' } -- git utils
     use { 'cohama/lexima.vim' } -- autoclose plugins
-    use { 'morhetz/gruvbox','joshdick/onedark.vim','ayu-theme/ayu-vim' } -- theme
+    use { 'morhetz/gruvbox','joshdick/onedark.vim','ayu-theme/ayu-vim','rafalbromirski/vim-aurora' } -- theme
     use { 'preservim/nerdtree' , 'preservim/nerdcommenter' } -- file & commenter
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- telescope
     use { 'glepnir/dashboard-nvim' } -- dashboard

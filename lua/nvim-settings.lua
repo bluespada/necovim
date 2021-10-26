@@ -32,6 +32,6 @@ filetype plugin on
 syntax on
 set nowrap
 colorscheme ayu
-hi NonText guifg=bg
 ]])
+-- hi NonText guifg=bg
 
