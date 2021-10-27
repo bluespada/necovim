@@ -59,5 +59,4 @@ return require("packer").startup(function(use)
     use { 'francoiscabrol/ranger.vim' } -- vim ranger
     -- utilities
     use { 'jghauser/mkdir.nvim', config=function() require'mkdir' end } -- makedir when folder not exist
-    use { 'lukas-reineke/indent-blankline.nvim' } -- indent line
 end)

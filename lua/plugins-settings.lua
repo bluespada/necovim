@@ -99,9 +99,3 @@ vim.g.vimwiki_list = {{
 -- move line config
 vim.g.move_key_modifier = 'C'
 
--- indent line
-require'indent_blankline'.setup { 
-    char = '|',
-    buftype_exclude = { 'terminal','dashboard','sagahover','help','NvimTree' },
-    show_end_of_line = true,
-}
