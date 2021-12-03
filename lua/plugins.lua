@@ -41,9 +41,11 @@ return require("packer").startup(function(use)
     use { 'folke/twilight.nvim', 'folke/zen-mode.nvim' } -- zen-mode and dim inactive code
     use { 'nvim-treesitter/nvim-treesitter' } -- treesitter
     use { 'neovim/nvim-lspconfig' } -- lspconfig
-    use { 'kabouzeid/nvim-lspinstall' } -- lspinstall
-    use { 'nvim-lua/completion-nvim'  } -- completion
-    use { 'glepnir/lspsaga.nvim',requires={ 'neovim/nvim-lspconfig' } } -- codeactions
+    -- lsp install is disabled because currently not maintained and not working
+    -- use { 'nvim-lua/completion-nvim'  } -- completion disable because currently not maintained
+    use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp','hrsh7th/cmp-buffer','hrsh7th/cmp-path','hrsh7th/cmp-cmdline' }} -- new completion
+    -- codeaction is disable because currently not support on neovim 0.6.0
+    use { 'tami5/lspsaga.nvim'} -- fork from lsp saga 
     use { 'onsails/lspkind-nvim' } -- lsp kind
     use { 'williamboman/nvim-lsp-installer' } -- lsp auto installer
     use { 'ray-x/lsp_signature.nvim' } -- lsp signature

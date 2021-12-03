@@ -17,7 +17,7 @@ local on_attach = function(client,bufnr)
     if(lsp_signature_cfg~=nil)then
         require'lsp_signature'.on_attach(lsp_signature_cfg)
     end
-    require'completion'.on_attach(client,bufnr)
+    -- require'completion'.on_attach(client,bufnr) -- disable completion
     if client.resolved_capabilities.document_formatting then
         vim.api.nvim_command [[augroup Format]]
         vim.api.nvim_command [[autocmd! * <buffer>]]
@@ -26,8 +26,49 @@ local on_attach = function(client,bufnr)
     end
 end
 
--- lsp
-require'lspinstall'.setup()
+-- lspkind
+local lspkind = require'lspkind'
+lspkind.init { }
+
+-- setup cmp with config lspkind is a default formatting and its auto completion
+local cmp = require'cmp'
+
+cmp.setup {
+
+	snippet = {
+		expand = function(args)
+			vim.fn["vsnip#anonymouse"](args.body)
+		end,
+	},
+
+	formatting = {
+		format = lspkind.cmp_format({
+			with_text = true,
+			menu = ({
+				buffer = "[Buffer]",
+				nvim_lsp = "[LSP]",
+				luasnip = "[LuaSnip]",
+				nvim_lua = "[Lua]",
+				latex_symbols = "[Latex]",
+			}),
+
+		}),
+	},
+
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'vsnip' },
+		{ name = 'look'}
+		}, {
+		{ name = 'buffer' },
+	})
+}
+
+local lsp_cmp = require'cmp_nvim_lsp'
+
+nvim_lsp.vimls.setup {
+	capabilities = lsp_cmp.update_capabilities(capabilities),
+}
 
 -- settings flutter-tools
 require'flutter-tools'.setup {
@@ -39,26 +80,6 @@ require'flutter-tools'.setup {
 }
 
 require'config.codeaction'
-
-local function setup_servers()
-  require'lspinstall'.setup()
-  local servers = require'lspinstall'.installed_servers()
-  for _, server in pairs(servers) do
-    nvim_lsp[server].setup{ on_attach= on_attach, capabilities=capabilities }
-  end
-end
-
-setup_servers()
-
--- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require'lspinstall'.post_install_hook = function ()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-end
-
-
--- lps kind
-require'lspkind'.init {  }
 
 local lsp_installer = require'nvim-lsp-installer'
 lsp_installer.on_server_ready(function(server)
