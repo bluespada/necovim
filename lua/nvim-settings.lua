@@ -31,7 +31,13 @@ filetype indent on
 filetype plugin on
 syntax on
 set nowrap
-colorscheme gruvbox
+colorscheme nord
 ]])
 -- hi NonText guifg=bg
 
+-- code folding
+vim.api.nvim_command [[augroup rember_folds]]
+vim.api.nvim_command [[autocmd!]]
+vim.api.nvim_command [[autocmd BufWinLeave * mkview]]
+vim.api.nvim_command [[autocmd BufWinEnter * silent! loadview]]
+vim.api.nvim_command [[augroup END]]

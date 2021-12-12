@@ -34,7 +34,7 @@ local config = {
     -- Disable sections and component separators
     component_separators = "",
     section_separators = "",
-    theme = 'gruvbox',
+    theme = 'nord',
 },
   sections = {
     -- these are to remove the defaults
@@ -159,7 +159,7 @@ ins_right {
 
 ins_right {
   'diagnostics',
-  sources = {'nvim_lsp'},
+  sources = {'nvim_diagnostic'},
   symbols = {error = ' ', warn = ' ', info = ' '},
   color_error = colors.red,
   color_warn = colors.yellow,
