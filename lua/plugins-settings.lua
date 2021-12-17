@@ -99,3 +99,7 @@ vim.g.vimwiki_list = {{
 -- move line config
 vim.g.move_key_modifier = 'C'
 
+-- gitsigns
+require'gitsigns'.setup {
+
+}

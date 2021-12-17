@@ -3,10 +3,10 @@ local opt = vim.opt
 opt.undofile = true
 opt.completeopt='menuone,noinsert,noselect'
 -- configuration tab
-opt.tabstop = 4
+opt.tabstop = 2
 opt.softtabstop = 0
 opt.expandtab = true
-opt.shiftwidth = 4 
+opt.shiftwidth = 2
 opt.ai = true
 opt.si = true
                
@@ -23,6 +23,7 @@ opt.title = false
 opt.encoding = 'utf-8'
 opt.cursorline = true
 opt.list = true
+opt.foldmethod='syntax'
 
 vim.cmd([[
 autocmd!
@@ -36,8 +37,11 @@ colorscheme nord
 -- hi NonText guifg=bg
 
 -- code folding
-vim.api.nvim_command [[augroup rember_folds]]
-vim.api.nvim_command [[autocmd!]]
-vim.api.nvim_command [[autocmd BufWinLeave * mkview]]
-vim.api.nvim_command [[autocmd BufWinEnter * silent! loadview]]
-vim.api.nvim_command [[augroup END]]
+vim.cmd([[
+augroup Autoview
+autocmd!
+autocmd BufWritePre,BufWinLeave ?* silent! mkview
+autocmd BufWinEnter ?* silent! laodview
+augroup END
+]])
+

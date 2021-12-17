@@ -29,6 +29,7 @@ return require("packer").startup(function(use)
     use { 'ryanoasis/vim-devicons' } -- vim icons
     use { 'norcalli/nvim-colorizer.lua' } -- colorizer
     use { 'tpope/vim-fugitive' } -- git utils
+    use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'cohama/lexima.vim' } -- autoclose plugins
     use { 'morhetz/gruvbox','joshdick/onedark.vim','ayu-theme/ayu-vim','rafalbromirski/vim-aurora', 'arcticicestudio/nord-vim' } -- theme
     use { 'preservim/nerdtree' , 'preservim/nerdcommenter' } -- file & commenter

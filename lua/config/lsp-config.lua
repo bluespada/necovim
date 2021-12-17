@@ -18,12 +18,12 @@ local on_attach = function(client,bufnr)
         require'lsp_signature'.on_attach(lsp_signature_cfg)
     end
     -- require'completion'.on_attach(client,bufnr) -- disable completion
-    --[[if client.resolved_capabilities.document_formatting then]]
-        --[[vim.api.nvim_command [[augroup Format]]
-        --[[vim.api.nvim_command [[autocmd! * <buffer>]]
-        --[[vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-        --[[vim.api.nvim_command [[augroup END]]
-    --[[end]]
+--    if client.resolved_capabilities.document_formatting then
+--        vim.api.nvim_command [[augroup Format]]
+--        vim.api.nvim_command [[autocmd! * <buffer>]]
+--        vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+--        vim.api.nvim_command [[augroup END]]
+--    end
 end
 
 -- lspkind
