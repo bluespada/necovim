@@ -32,7 +32,7 @@ filetype indent on
 filetype plugin on
 syntax on
 set nowrap
-colorscheme nord
+colorscheme onedark
 ]])
 -- hi NonText guifg=bg
 

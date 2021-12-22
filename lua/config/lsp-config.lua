@@ -14,9 +14,9 @@ local lsp_signature_cfg = {
 
 local on_attach = function(client,bufnr)
     -- enable completion
-    if(lsp_signature_cfg~=nil)then
-        require'lsp_signature'.on_attach(lsp_signature_cfg)
-    end
+    --[[if(lsp_signature_cfg~=nil)then]]
+        --[[require'lsp_signature'.on_attach(lsp_signature_cfg)]]
+    --[[end]]
     -- require'completion'.on_attach(client,bufnr) -- disable completion
 --    if client.resolved_capabilities.document_formatting then
 --        vim.api.nvim_command [[augroup Format]]
