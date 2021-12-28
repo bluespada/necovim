@@ -11,19 +11,11 @@ local lsp_signature_cfg = {
     hint_prefix = "😈 ",
 }
 
-
 local on_attach = function(client,bufnr)
-    -- enable completion
-    --[[if(lsp_signature_cfg~=nil)then]]
-        --[[require'lsp_signature'.on_attach(lsp_signature_cfg)]]
-    --[[end]]
-    -- require'completion'.on_attach(client,bufnr) -- disable completion
---    if client.resolved_capabilities.document_formatting then
---        vim.api.nvim_command [[augroup Format]]
---        vim.api.nvim_command [[autocmd! * <buffer>]]
---        vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
---        vim.api.nvim_command [[augroup END]]
---    end
+    -- enable auto formating
+    if client.resolved_capabilities.document_formatting then
+      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+    end
 end
 
 -- lspkind
@@ -51,17 +43,17 @@ cmp.setup {
 				nvim_lua = "[Lua]",
 				latex_symbols = "[Latex]",
 			}),
-
 		}),
 	},
 
-	sources = cmp.config.sources({
-		{ name = 'nvim_lsp' },
-		{ name = 'vsnip' },
-		}, {
-		{ name = 'buffer' },
-        { name = 'look' }
-	})
+	sources = cmp.config.sources(
+  {
+    { name = 'nvim_lsp' },
+  },
+  {
+    { name = 'buffer' },
+    { name = 'look', keyword_length=2, option={ convert_case = true, loud = true } }
+  })
 }
 
 local lsp_cmp = require'cmp_nvim_lsp'
@@ -167,11 +159,6 @@ trouble.setup {  }
 -- Lsp Null
 local null_ls = require'null-ls'
 null_ls.setup {
-  sources = {
-    require'null-ls'.builtins.formatting.stylua,
-    require'null-ls'.builtins.diagnostics.eslint,
-    require'null-ls'.builtins.completion.spell,
-  },
   on_attach = function(c)
     if c.resolved_capabilities.document_formatting then
       vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")

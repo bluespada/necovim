@@ -31,7 +31,7 @@ return require("packer").startup(function(use)
     use { 'tpope/vim-fugitive' } -- git utils
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'cohama/lexima.vim' } -- autoclose plugins
-    use { 'morhetz/gruvbox','joshdick/onedark.vim','ayu-theme/ayu-vim','rafalbromirski/vim-aurora', 'arcticicestudio/nord-vim' } -- theme
+    use { 'morhetz/gruvbox','joshdick/onedark.vim','ayu-theme/ayu-vim','rafalbromirski/vim-aurora', 'arcticicestudio/nord-vim','bluespada/justblack.vim' } -- theme
     use { 'preservim/nerdtree' , 'preservim/nerdcommenter' } -- file & commenter
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- telescope
     use { 'glepnir/dashboard-nvim' } -- dashboard
@@ -44,7 +44,7 @@ return require("packer").startup(function(use)
     use { 'neovim/nvim-lspconfig' } -- lspconfig
     -- lsp install is disabled because currently not maintained and not working
     -- use { 'nvim-lua/completion-nvim'  } -- completion disable because currently not maintained
-    use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp','hrsh7th/cmp-buffer','hrsh7th/cmp-path','hrsh7th/cmp-cmdline' }} -- new completion
+    use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp','hrsh7th/cmp-buffer','hrsh7th/cmp-path','hrsh7th/cmp-cmdline','octaltree/cmp-look','hrsh7th/vim-vsnip' }} -- new completion
     -- codeaction is disable because currently not support on neovim 0.6.0
     use { 'tami5/lspsaga.nvim'} -- fork from lsp saga 
     use { 'jose-elias-alvarez/null-ls.nvim' } -- null ls
@@ -64,4 +64,5 @@ return require("packer").startup(function(use)
     use { 'francoiscabrol/ranger.vim' } -- vim ranger
     -- utilities
     use { 'jghauser/mkdir.nvim', config=function() require'mkdir' end } -- makedir when folder not exist
+    use { 'itchyny/calendar.vim' } -- calendar
 end)

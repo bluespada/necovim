@@ -45,3 +45,5 @@ map('n','cs',':Lspsaga show_cursor_diagnostics<CR>',{ silent=true , noremap=true
 map('n','cz',':Lspsaga preview_definition<CR>',{ silent=true,noremap=true })
 -- ranger
 map('n','<leader>dr',':Ranger<CR>',{ silent = true, noremap = true })
+-- calendar
+map('n','<leader>cal',':Calendar<CR>', { silent=true, noremap=true })
