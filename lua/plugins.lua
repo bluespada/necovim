@@ -47,6 +47,8 @@ return require("packer").startup(function(use)
     use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp','hrsh7th/cmp-buffer','hrsh7th/cmp-path','hrsh7th/cmp-cmdline' }} -- new completion
     -- codeaction is disable because currently not support on neovim 0.6.0
     use { 'tami5/lspsaga.nvim'} -- fork from lsp saga 
+    use { 'jose-elias-alvarez/null-ls.nvim' } -- null ls
+    use { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } } -- trouble vim
     use { 'onsails/lspkind-nvim' } -- lsp kind
     use { 'williamboman/nvim-lsp-installer' } -- lsp auto installer
     use { 'ray-x/lsp_signature.nvim' } -- lsp signature

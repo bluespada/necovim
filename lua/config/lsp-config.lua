@@ -158,3 +158,23 @@ end)
     --[[}]]
   --[[}]]
 --[[}]]
+
+
+-- Lsp Trouble
+local trouble = require'trouble'
+trouble.setup {  }
+
+-- Lsp Null
+local null_ls = require'null-ls'
+null_ls.setup {
+  sources = {
+    require'null-ls'.builtins.formatting.stylua,
+    require'null-ls'.builtins.diagnostics.eslint,
+    require'null-ls'.builtins.completion.spell,
+  },
+  on_attach = function(c)
+    if c.resolved_capabilities.document_formatting then
+      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+    end
+  end,
+}
