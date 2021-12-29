@@ -44,7 +44,7 @@ return require("packer").startup(function(use)
     use { 'neovim/nvim-lspconfig' } -- lspconfig
     -- lsp install is disabled because currently not maintained and not working
     -- use { 'nvim-lua/completion-nvim'  } -- completion disable because currently not maintained
-    use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp','hrsh7th/cmp-buffer','hrsh7th/cmp-path','hrsh7th/cmp-cmdline','octaltree/cmp-look','hrsh7th/vim-vsnip' }} -- new completion
+    use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp','hrsh7th/cmp-buffer','hrsh7th/cmp-path','hrsh7th/cmp-cmdline','octaltree/cmp-look','L3MON4D3/LuaSnip' }} -- new completion
     -- codeaction is disable because currently not support on neovim 0.6.0
     use { 'tami5/lspsaga.nvim'} -- fork from lsp saga 
     use { 'jose-elias-alvarez/null-ls.nvim' } -- null ls
