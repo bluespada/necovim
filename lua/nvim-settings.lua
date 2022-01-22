@@ -32,7 +32,7 @@ filetype indent on
 filetype plugin on
 syntax on
 set nowrap
-colorscheme justblack
+colorscheme ayu
 ]])
 -- hi NonText guifg=bg
 
@@ -45,3 +45,18 @@ autocmd BufWinEnter ?* silent! laodview
 augroup END
 ]])
 
+-- auto makedir if save file not founds
+vim.cmd([[
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
+]])
