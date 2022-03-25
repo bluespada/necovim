@@ -3,10 +3,10 @@ local opt = vim.opt
 opt.undofile = true
 opt.completeopt='menuone,noinsert,noselect'
 -- configuration tab
-opt.tabstop = 2
+opt.tabstop = 4
 opt.softtabstop = 0
 opt.expandtab = true
-opt.shiftwidth = 2
+opt.shiftwidth = 4
 opt.ai = true
 opt.si = true
                
@@ -32,7 +32,7 @@ filetype indent on
 filetype plugin on
 syntax on
 set nowrap
-colorscheme ayu
+colorscheme justblack
 ]])
 -- hi NonText guifg=bg
 

@@ -65,4 +65,5 @@ return require("packer").startup(function(use)
     -- utilities
     use { 'jghauser/mkdir.nvim', config=function() require'mkdir' end } -- makedir when folder not exist
     use { 'itchyny/calendar.vim' } -- calendar
+    use { 'github/copilot.vim' } -- github copilot
 end)
