@@ -23,7 +23,7 @@ opt.title = false
 opt.encoding = 'utf-8'
 opt.cursorline = true
 opt.list = true
-opt.foldmethod='syntax'
+-- opt.foldmethod='syntax'
 
 vim.cmd([[
 autocmd!
@@ -37,13 +37,13 @@ colorscheme justblack
 -- hi NonText guifg=bg
 
 -- code folding
-vim.cmd([[
-augroup Autoview
-autocmd!
-autocmd BufWritePre,BufWinLeave ?* silent! mkview
-autocmd BufWinEnter ?* silent! laodview
-augroup END
-]])
+--[[vim.cmd([[]]
+--[[augroup Autoview]]
+--[[autocmd!]]
+--[[autocmd BufWritePre,BufWinLeave ?* silent! mkview]]
+--[[autocmd BufWinEnter ?* silent! laodview]]
+--[[augroup END]]
+--[[<])]]
 
 -- auto makedir if save file not founds
 vim.cmd([[

@@ -54,6 +54,7 @@ return require("packer").startup(function(use)
     use { 'ray-x/lsp_signature.nvim' } -- lsp signature
     -- disable coc , and use LSP Instead
     use {'akinsho/flutter-tools.nvim', requires = { 'nvim-lua/plenary.nvim' , 'mfussenegger/nvim-dap' } } -- flutter langugae support (sometime i have a flutter projects)
+    use {'habamax/vim-godot'} -- godot langugae support (sometime i have a flutter projects)
     use { 'khaveesh/vim-fish-syntax' } -- fish shell highlighting
 
     -- use { 'neoclide/coc.nvim' , branch = 'release', run=function()
