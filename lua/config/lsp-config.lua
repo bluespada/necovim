@@ -13,9 +13,18 @@ local lsp_signature_cfg = {
 
 local on_attach = function(client,bufnr)
     -- enable auto formating
-    if client.resolved_capabilities.document_formatting then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+    
+    if vim.api.nvim_eval("exists('g:necovim_disable_lsp_autoformat')") == 1 then
+        if vim.api.nvim_eval("g:necovim_disable_lsp_autoformat") == 1 then
+            return
+        end
+    else
+        if client.resolved_capabilities.document_formatting then
+            vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+        end
     end
+
+        
 end
 
 -- lspkind
