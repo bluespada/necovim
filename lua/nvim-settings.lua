@@ -6,10 +6,9 @@ opt.completeopt='menuone,noinsert,noselect'
 opt.tabstop = 4
 opt.softtabstop = 0
 opt.expandtab = true
-opt.shiftwidth = 4
-opt.ai = true
+opt.shiftwidth = 4 
+opt.ai = true 
 opt.si = true
-               
 -- general configurations
 opt.mouse = 'a'
 opt.showcmd = true
@@ -24,7 +23,6 @@ opt.encoding = 'utf-8'
 opt.cursorline = true
 opt.list = true
 -- opt.foldmethod='syntax'
-
 vim.cmd([[
 autocmd!
 filetype on
@@ -32,7 +30,7 @@ filetype indent on
 filetype plugin on
 syntax on
 set nowrap
-colorscheme ayu
+colorscheme onedark
 ]])
 -- hi NonText guifg=bg
 

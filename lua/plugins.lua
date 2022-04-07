@@ -36,7 +36,7 @@ return require("packer").startup(function(use)
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- telescope
     use { 'glepnir/dashboard-nvim' } -- dashboard
     use { 'hoob3rt/lualine.nvim',requires = {'kyazdani42/nvim-web-devicons', opt = true } } -- bar plugins
-    use { 'akinsho/nvim-bufferline.lua' } -- tabline plugins
+    use { 'akinsho/bufferline.nvim' } -- tabline plugins
     use { 'psliwka/vim-smoothie' } -- smooth scrolls
     use { 'wfxr/minimap.vim','Xuyuanp/scrollbar.nvim' } -- scroll plugins
     use { 'folke/twilight.nvim', 'folke/zen-mode.nvim' } -- zen-mode and dim inactive code
