@@ -38,7 +38,13 @@ map('n','<leader>tm',':MinimapToggle<CR>',{silent=true,noremap=true})
 map('n','<C-a>',':-<CR>',{silent=true,noremap=true})
 map('n','<C-x>',':+<CR>',{silent=true,noremap=true})
 -- codeactions
-map('n','ca',':CodeActionMenu<CR>',{silent=true,noremap=true})
+map('n','cf',':Lspsaga lsp_finder<CR>',{ silent=true,noremap=true })
+map('n','ca',':Lspsaga code_action<CR>',{ silent=true,noremap=true })
+map('n','cd',':Lspsaga hover_doc<CR>',{ silent=true,noremap=true })
+map('n','cs',':Lspsaga show_cursor_diagnostics<CR>',{ silent=true , noremap=true  })
+map('n','cz',':Lspsaga preview_definition<CR>',{ silent=true,noremap=true })
+map('n','cg',':Lspsaga goto_definition<CR>',{ silent=true,noremap=true })
+map('n','cj',':Lspsaga jump_to_implementation<CR>',{ silent=true,noremap=true })
 -- ranger
 map('n','<leader>dr',':Ranger<CR>',{ silent = true, noremap = true })
 -- calendar

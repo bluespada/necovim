@@ -38,7 +38,6 @@ return require("packer").startup(function(use)
     use { 'hoob3rt/lualine.nvim',requires = {'kyazdani42/nvim-web-devicons', opt = true } } -- bar plugins
     use { 'akinsho/bufferline.nvim' } -- tabline plugins
     use { 'psliwka/vim-smoothie' } -- smooth scrolls
-    use { 'wfxr/minimap.vim','Xuyuanp/scrollbar.nvim' } -- scroll plugins
     use { 'folke/twilight.nvim', 'folke/zen-mode.nvim' } -- zen-mode and dim inactive code
     use { 'nvim-treesitter/nvim-treesitter' } -- treesitter
     use { 'neovim/nvim-lspconfig' } -- lspconfig
