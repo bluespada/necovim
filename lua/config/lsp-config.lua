@@ -11,6 +11,13 @@ local lsp_signature_cfg = {
     hint_prefix = "😈 ",
 }
 
+-- disable copilot if detected
+if vim.api.nvim_eval("exists('g:necovim_disable_copilot')") == 1 then
+    if vim.api.nvim_eval("g:necovim_disable_lsp_copilot") == 1 then
+        vim.cmd("Copilot disable")
+    end
+end
+
 local on_attach = function(client,bufnr)
     -- enable auto formating
     

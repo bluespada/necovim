@@ -99,9 +99,31 @@ ins_left {
       ['!'] = colors.red,
       t = colors.red
     }
+    local mode_name = {
+        n = 'NORMAL',
+        i = 'INSERT',
+        v = 'VISUAL',
+        [''] = 'VISUAL',
+        V = 'VISUAL',
+        c = 'COMMAND',
+        no = 'NO MODE',
+        s = 'SELECT',
+        S = 'SELECT',
+        [''] = 'SELECT',
+        ic = 'INSERT',
+        R = 'REPLACE',
+        Rv = 'REPLACE',
+        cv = 'COMMAND',
+        ce = 'COMMAND',
+        r = 'REGION',
+        rm = 'REGION',
+        ['r?'] = 'REGION',
+        ['!'] = 'EX',
+        t = 'TERMINAL'
+    }
     vim.api.nvim_command(
         'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()])
-    return ' '
+    return ' '.. mode_name[vim.fn.mode()].." MODE"
   end,
   color = "LualineMode",
   left_padding = 0
