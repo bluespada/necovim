@@ -23,4 +23,15 @@ Note : Before using this plugins please define your shell on `lua/nvim-settings.
 
 * In build LSP.
 * Native Lua scripts.
-* Inbuild Flutter developers tools.
+
+## LSP
+
+due to enable lsp you can type command to install lsp language server:
+```
+:LspInstallInfo (show prompt list available language server)
+:LspInstall <language> (install language server)
+```
+
+## Keybind
+
+to edits keybind you can edit file `lua/nvim-keybind.lua`
