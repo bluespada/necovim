@@ -21,8 +21,15 @@ Note : Before using this plugins please define your shell on `lua/nvim-settings.
 
 ## FEATURES
 
-* In build LSP.
-* Native Lua scripts.
+* File explorer with [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua)
+* Autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+* Git integration with [fugitive.nvim](https://github.com/tpope/vim-fugitive) and [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+* Statusline with [lualine]()
+* Tabline with [bufferline.vim]()
+* Fuzzy with [Telescope]()
+* Syntax with [Treesitter]()
+* AI pilot with [Github Copilot]()
+* LSP with inbuild [Native LSP]()
 
 ## LSP
 
