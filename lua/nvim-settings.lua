@@ -30,7 +30,7 @@ filetype indent on
 filetype plugin on
 syntax on
 set nowrap
-colorscheme ayu
+colorscheme justblack
 ]])
 -- hi NonText guifg=bg
 
