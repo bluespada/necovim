@@ -3,8 +3,9 @@ local map = vim.api.nvim_set_keymap
 
 map('n','<leader>r',':Reload<CR>',{silent=true,noremap=true})
 -- nerd tree shortcuts
-map('n','<leader>nt',':NERDTreeToggle<CR>',{silent=true,noremap=true})
-map('n','<leader>nf',':NERDTreeFocus<CR>',{silent=true,noremap=true})
+map('n','<leader>nt',':NvimTreeToggle<CR>',{silent=true,noremap=true})
+map('n','<leader>nf',':NvimTreeFocus<CR>',{silent=true,noremap=true})
+map('n','<leader>nc',':NvimTreeClose<CR>',{silent=true,noremap=true})
 -- packer shortcuts
 map('n','<leader>pi',':PackerInstall<CR>',{silent=true,noremap=true})
 map('n','<leader>pc',':PackerClean<CR>',{silent=true,noremap=true})

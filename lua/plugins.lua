@@ -32,17 +32,14 @@ return require("packer").startup(function(use)
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'cohama/lexima.vim' } -- autoclose plugins
     use { 'morhetz/gruvbox','joshdick/onedark.vim','ayu-theme/ayu-vim','rafalbromirski/vim-aurora', 'arcticicestudio/nord-vim','bluespada/justblack.vim' } -- theme
-    use { 'preservim/nerdtree' , 'preservim/nerdcommenter' } -- file & commenter
+    use { 'kyazdani42/nvim-tree.lua' , 'preservim/nerdcommenter' } -- file & commenter
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- telescope
     use { 'glepnir/dashboard-nvim' } -- dashboard
     use { 'hoob3rt/lualine.nvim',requires = {'kyazdani42/nvim-web-devicons', opt = true } } -- bar plugins
     use { 'akinsho/bufferline.nvim' } -- tabline plugins
     use { 'psliwka/vim-smoothie' } -- smooth scrolls
-    use { 'folke/twilight.nvim', 'folke/zen-mode.nvim' } -- zen-mode and dim inactive code
     use { 'nvim-treesitter/nvim-treesitter' } -- treesitter
     use { 'neovim/nvim-lspconfig' } -- lspconfig
-    -- lsp install is disabled because currently not maintained and not working
-    -- use { 'nvim-lua/completion-nvim'  } -- completion disable because currently not maintained
     use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp','hrsh7th/cmp-buffer','hrsh7th/cmp-path','hrsh7th/cmp-cmdline','octaltree/cmp-look','L3MON4D3/LuaSnip' }} -- new completion
     -- codeaction is disable because currently not support on neovim 0.6.0
     use { 'tami5/lspsaga.nvim'} -- fork from lsp saga 
@@ -55,11 +52,11 @@ return require("packer").startup(function(use)
     use {'akinsho/flutter-tools.nvim', requires = { 'nvim-lua/plenary.nvim' , 'mfussenegger/nvim-dap' } } -- flutter langugae support (sometime i have a flutter projects)
     use {'habamax/vim-godot'} -- godot langugae support (sometime i have a flutter projects)
     use { 'khaveesh/vim-fish-syntax' } -- fish shell highlighting
-
     -- use { 'neoclide/coc.nvim' , branch = 'release', run=function()
     --    vim.cmd("CocInstall coc-eslint coc-emmet coc-css coc-highlight coc-yaml coc-snippets coc-prettier coc-json coc-tsserver coc-pairs coc-tslint coc-python coc-git")
     -- end } -- Coc
     use { 'vimwiki/vimwiki' } -- wiki plugins use as notes
+    use { 'lukas-reineke/indent-blankline.nvim' } -- indent blank line
     use { 'matze/vim-move' } -- move line
     use { 'francoiscabrol/ranger.vim' } -- vim ranger
     -- utilities
