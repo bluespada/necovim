@@ -54,3 +54,6 @@ map('n', '<leader>cal', ':Calendar<CR>', { silent = true, noremap = true })
 map('n', '<leader>tt', ':TroubleToggle<CR>', { silent = true, noremap = true })
 map('n', '<leader>tr', ':TroubleRefresh<CR>', { silent = true, noremap = true })
 map('n', '<leader>tc', ':TroubleClose<CR>', { silent = true, noremap = true })
+-- Github
+map('n', '<leader>gdd', ':Git add .<CR>', { silent = true, noremap = true })
+map('n', '<leader>gdc', ':Git commit<CR>', { silent = true, noremap = true })
