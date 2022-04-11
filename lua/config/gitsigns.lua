@@ -1,3 +1,3 @@
 require'gitsigns'.setup {
-    word_diff = true,
+    -- word_diff = true,
 }

@@ -30,8 +30,6 @@ local on_attach = function(client,bufnr)
             vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
         end
     end
-
-        
 end
 
 -- lspkind
