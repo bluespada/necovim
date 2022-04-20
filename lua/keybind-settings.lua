@@ -6,6 +6,7 @@ map('n', '<leader>r', ':Reload<CR>', { silent = true, noremap = true })
 map('n', '<leader>nt', ':NvimTreeToggle<CR>', { silent = true, noremap = true })
 map('n', '<leader>nf', ':NvimTreeFocus<CR>', { silent = true, noremap = true })
 map('n', '<leader>nc', ':NvimTreeClose<CR>', { silent = true, noremap = true })
+map('n', '<leader>nr', ':NvimTreeRefresh<CR>', { silent = true, noremap = true })
 -- packer shortcuts
 map('n', '<leader>pi', ':PackerInstall<CR>', { silent = true, noremap = true })
 map('n', '<leader>pc', ':PackerClean<CR>', { silent = true, noremap = true })
