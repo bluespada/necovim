@@ -31,7 +31,7 @@ return require("packer").startup(function(use)
     use { 'tpope/vim-fugitive' } -- git utils
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'cohama/lexima.vim' } -- autoclose plugins
-    use { 'morhetz/gruvbox', 'joshdick/onedark.vim', 'ayu-theme/ayu-vim', 'rafalbromirski/vim-aurora', 'tomasr/molokai', 'arcticicestudio/nord-vim', 'bluespada/justblack.vim' } -- theme
+    use { 'morhetz/gruvbox', 'joshdick/onedark.vim', 'tomasiser/vim-code-dark', 'ayu-theme/ayu-vim', 'rafalbromirski/vim-aurora', 'tomasr/molokai', 'arcticicestudio/nord-vim', 'bluespada/justblack.vim' } -- theme
     use { 'kyazdani42/nvim-tree.lua', 'preservim/nerdcommenter' } -- file & commenter
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- telescope
     use { 'glepnir/dashboard-nvim' } -- dashboard
@@ -63,4 +63,7 @@ return require("packer").startup(function(use)
     use { 'jghauser/mkdir.nvim', config = function() require 'mkdir' end } -- makedir when folder not exist
     use { 'itchyny/calendar.vim' } -- calendar
     use { 'github/copilot.vim' } -- github copilot
+    use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
+        require("toggleterm").setup()
+    end}
 end)

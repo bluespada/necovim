@@ -33,3 +33,6 @@ require'config/gitsigns'
 
 -- indent black line
 require'config/indent-blackline'
+
+-- ToggleTerm
+require'config/toggleterm'

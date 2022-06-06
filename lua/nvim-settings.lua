@@ -30,6 +30,8 @@ filetype indent on
 filetype plugin on
 syntax on
 set nowrap
+set t_Co=256
+set t_ut=
 colorscheme justblack
 ]])
 -- hi NonText guifg=bg

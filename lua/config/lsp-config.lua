@@ -26,7 +26,7 @@ local on_attach = function(client, bufnr)
             return
         end
     else
-        if client.resolved_capabilities.document_formatting then
+        if client.server_capabilities.document_formatting then
             vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
         end
     end
@@ -59,7 +59,7 @@ cmp.setup {
 
     formatting = {
         format = lspkind.cmp_format({
-            with_text = true,
+            with_text = false,
             menu = ({
                 buffer = "[Buffer]",
                 nvim_lsp = "[LSP]",
@@ -75,11 +75,11 @@ cmp.setup {
             { name = 'nvim_lsp' },
         },
         {
-            { name = 'buffer', option = {
-                get_bufnrs = function() return { vim.api.nvim_get_current_buf() } end
-            } },
-            { name = 'look', keyword_length = 2, option = { convert_case = true, loud = true } }
-        }
+        { name = 'buffer', option = {
+            get_bufnrs = function() return { vim.api.nvim_get_current_buf() } end
+         } },
+        { name = 'look', keyword_length = 2, option = { convert_case = true, loud = false } }
+    }
     ),
 
     view = {
@@ -125,11 +125,11 @@ local trouble = require 'trouble'
 trouble.setup {}
 
 -- Lsp Null
-local null_ls = require 'null-ls'
-null_ls.setup {
-    on_attach = function(c)
-        if c.resolved_capabilities.document_formatting then
-            vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-        end
-    end,
-}
+-- local null_ls = require 'null-ls'
+-- null_ls.setup {
+--    on_attach = function(c)
+--        if c.resolved_capabilities.document_formatting then
+--            vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+--        end
+--    end,
+-- }
