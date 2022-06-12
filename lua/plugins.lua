@@ -6,6 +6,7 @@ local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
     execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
     execute "packadd packer.nvim"
+    execute "PackerInstall"
 end
 
 local packer_ok, packer = pcall(require, "packer")
@@ -31,7 +32,7 @@ return require("packer").startup(function(use)
     use { 'tpope/vim-fugitive' } -- git utils
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'cohama/lexima.vim' } -- autoclose plugins
-    use { 'morhetz/gruvbox', 'joshdick/onedark.vim', 'tomasiser/vim-code-dark', 'ayu-theme/ayu-vim', 'bluespada/justblack.vim' } -- theme
+    use { 'marko-cerovac/material.nvim', 'metalelf0/jellybeans-nvim', 'morhetz/gruvbox', 'joshdick/onedark.vim', 'tomasiser/vim-code-dark', 'ayu-theme/ayu-vim', 'bluespada/justblack.vim' } -- theme
     use { 'catppuccin/nvim', as = 'catppuccin' } --theme
     use { 'kyazdani42/nvim-tree.lua', 'preservim/nerdcommenter' } -- file & commenter
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- telescope
@@ -43,7 +44,7 @@ return require("packer").startup(function(use)
     use { 'neovim/nvim-lspconfig' } -- lspconfig
     use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'octaltree/cmp-look', 'L3MON4D3/LuaSnip' } } -- new completion
     -- codeaction is disable because currently not support on neovim 0.6.0
-    use { 'tami5/lspsaga.nvim' } -- fork from lsp saga 
+    use { 'tami5/lspsaga.nvim' } -- fork from lsp saga
     use { 'jose-elias-alvarez/null-ls.nvim' } -- null ls
     use { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } } -- trouble vim
     use { 'onsails/lspkind-nvim' } -- lsp kind
@@ -67,4 +68,6 @@ return require("packer").startup(function(use)
     use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
         require("toggleterm").setup()
     end}
+    use { 'rcarriga/nvim-notify' } -- notify
+    use { 'natecraddock/sessions.nvim', requires = { 'rcarriga/nvim-notify' } } -- session manager
 end)

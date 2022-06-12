@@ -1,5 +1,6 @@
 -- enable capabilities
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- global setup nvim_lsp
@@ -52,14 +53,14 @@ cmp.setup {
 
     snippet = {
         expand = function(args)
-            -- vim.fn["vsnip#anonymouse"](args.body)
+            vim.fn["vsnip#anonymouse"](args.body)
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
 
     formatting = {
         format = lspkind.cmp_format({
-            with_text = false,
+            with_text = true,
             menu = ({
                 buffer = "[Buffer]",
                 nvim_lsp = "[LSP]",
@@ -73,6 +74,8 @@ cmp.setup {
     sources = cmp.config.sources(
         {
             { name = 'nvim_lsp' },
+            { name = 'luasnip' },
+            { name = 'vsnip' }
         },
         {
         { name = 'buffer', option = {

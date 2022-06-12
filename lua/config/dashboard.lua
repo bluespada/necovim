@@ -1,9 +1,37 @@
-vim.g.dashboard_default_executive='telescope'
+local dashboard = require'dashboard'
+
+function DashboardNvimConfig()
+    require'telescope.builtin'.find_files({ search_dirs = {'~/.config/nvim/'} })
+end
 
 -- disable tabline
-vim.g.indentLine_fileTypeExclude = {'dashboard'}
-
-vim.g.dashboard_custom_header={
+dashboard.indentLine_fileTypeExclude = {'dashboard'}
+dashboard.hide_tabline = false
+dashboard.hide_statusline = false
+local alternative = { 
+    '⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ',
+    '⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡖⠁⠀⠀⠀⠀⠀⠀⠈⢲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀ ',
+    '⠀⠀⠀⠀⠀⠀⠀⠀⣼⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣧⠀⠀⠀⠀⠀⠀⠀⠀ ',
+    '⠀⠀⠀⠀⠀⠀⠀⣸⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣇⠀⠀⠀⠀⠀⠀⠀ ',
+    '⠀⠀⠀⠀⠀⠀⠀⣿⣿⡇⠀⢀⣀⣤⣤⣤⣤⣀⡀⠀⢸⣿⣿⠀⠀⠀⠀⠀⠀⠀ ',
+    '⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣔⢿⡿⠟⠛⠛⠻⢿⡿⣢⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀ ',
+    '⠀⠀⠀⠀⣀⣤⣶⣾⣿⣿⣿⣷⣤⣀⡀⢀⣀⣤⣾⣿⣿⣿⣷⣶⣤⡀⠀⠀⠀⠀ ',
+    '⠀⠀⢠⣾⣿⡿⠿⠿⠿⣿⣿⣿⣿⡿⠏⠻⢿⣿⣿⣿⣿⠿⠿⠿⢿⣿⣷⡀⠀⠀ ',
+    '⠀⢠⡿⠋⠁⠀⠀⢸⣿⡇⠉⠻⣿⠇⠀⠀⠸⣿⡿⠋⢰⣿⡇⠀⠀⠈⠙⢿⡄⠀ ',
+    '⠀⡿⠁⠀⠀⠀⠀⠘⣿⣷⡀⠀⠰⣿⣶⣶⣿⡎⠀⢀⣾⣿⠇⠀⠀⠀⠀⠈⢿⠀ ',
+    '⠀⡇⠀⠀⠀⠀⠀⠀⠹⣿⣷⣄⠀⣿⣿⣿⣿⠀⣠⣾⣿⠏⠀⠀⠀⠀⠀⠀⢸⠀ ',
+    '⠀⠁⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⢇⣿⣿⣿⣿⡸⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠈⠀ ',
+    '⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ',
+    '⠀⠀⠀⠐⢤⣀⣀⢀⣀⣠⣴⣿⣿⠿⠋⠙⠿⣿⣿⣦⣄⣀⠀⠀⣀⡠⠂⠀⠀⠀ ',
+    '⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠉⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠋⠁⠀⠀⠀⠀⠀ ',
+    '',
+    '',
+    'No code no party',
+    ' @bluespada',
+    '',
+    '',
+}
+local title = {
     '',
     '⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕',
     '⢐⢕⢕⢕⢕⢕⣕⢕⢕⠕⠁⢕⢕⢕⢕⢕⢕⢕⢕⠅⡄⢕⢕⢕⢕⢕⢕⢕⢕⢕',
@@ -20,18 +48,24 @@ vim.g.dashboard_custom_header={
     '⣆⢕⠄⢱⣄⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢁⢕⢕⠕⢁',
     '⣿⣦⡀⣿⣿⣷⣶⣬⣍⣛⣛⣛⡛⠿⠿⠿⠛⠛⢛⣛⣉⣭⣤⣂⢜⠕⢑⣡⣴⣿',
     '',
+    '',
+    'No code no party',
+    ' @bluespada',
+    '',
+    '',
 }
 
-vim.g.dashboard_custom_footer={
+dashboard.custom_header=title
+dashboard.custom_footer={
+    "",
+    "",
     "If your oppurtinites doesn't come to you , then make it ✨✨✨",
 }
 
-vim.g.dashboard_custom_shortcut={
-    last_session       = 'leader d l',
-    find_history       = 'leader d h',
-    find_file          = 'leader d f',
-    new_file           = 'leader d n',
-    change_colorscheme = 'leader d c',
-    find_word          = 'leader d w',
-    book_marks         = 'leader d b',
+dashboard.custom_center={
+    { icon = "  ", desc = "Load Session              ", shortcut = "Leader dl", action = 'lua LoadSession()' },
+    { icon = "  ", desc = "New File                  ", shortcut = "Leader dn", action = 'enew' },
+    { icon = "  ", desc = "Find file                 ", shortcut = "Leader df", action = 'Telescope find_files' }, -- find file
+    { icon = "  ", desc = "Find words                ", shortcut = "Leader dw", action = 'Telescope live_grep' },
+    { icon = "  ", desc = "Open Configuration        ", shortcut = "Leader dc", action = 'lua DashboardNvimConfig()' },
 }

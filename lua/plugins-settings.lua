@@ -1,3 +1,6 @@
+-- notify
+require'config/session'
+
 -- colorizer
 require'config/colorizer'
 

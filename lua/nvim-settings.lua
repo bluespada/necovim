@@ -34,11 +34,13 @@ set nowrap
 set t_Co=256
 set t_ut=
 hi NonText guifg=bg
+let g:catppuccin_flavour = "moca"
+colorscheme catppuccin
 ]])
 
--- colorscheme options for catpuccin
-vim.g.catppuccin_flavour = 'mocha'
-vim.cmd[[colorscheme catppuccin]]
+-- colorscheme options for catppuccin
+-- vim.g.catppuccin_flavour = 'moca'
+-- require'catppuccin'.setup{ transparent_background = true, term_colors = true, integrations = { lsp_saga = true } }
 
 -- code folding
 --[[vim.cmd([[]]
