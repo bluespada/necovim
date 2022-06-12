@@ -1,4 +1,5 @@
 local opt = vim.opt
+
 -- undofiles
 opt.undofile = true
 opt.completeopt = 'menuone,noinsert,noselect'
@@ -32,9 +33,12 @@ syntax on
 set nowrap
 set t_Co=256
 set t_ut=
-colorscheme justblack
+hi NonText guifg=bg
 ]])
--- hi NonText guifg=bg
+
+-- colorscheme options for catpuccin
+vim.g.catppuccin_flavour = 'mocha'
+vim.cmd[[colorscheme catppuccin]]
 
 -- code folding
 --[[vim.cmd([[]]
