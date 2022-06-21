@@ -63,9 +63,9 @@ dashboard.custom_footer={
 }
 
 dashboard.custom_center={
-    { icon = "  ", desc = "Load Session              ", shortcut = "Leader dl", action = 'lua LoadSession()' },
     { icon = "  ", desc = "New File                  ", shortcut = "Leader dn", action = 'enew' },
     { icon = "  ", desc = "Find file                 ", shortcut = "Leader df", action = 'Telescope find_files' }, -- find file
     { icon = "  ", desc = "Find words                ", shortcut = "Leader dw", action = 'Telescope live_grep' },
+    { icon = "  ", desc = "Load Session              ", shortcut = "Leader dl", action = 'lua LoadSession()' },
     { icon = "  ", desc = "Open Configuration        ", shortcut = "Leader dc", action = 'lua DashboardNvimConfig()' },
 }

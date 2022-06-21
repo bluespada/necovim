@@ -20,16 +20,19 @@ if vim.api.nvim_eval("exists('g:necovim_disable_copilot')") == 1 then
 end
 
 local on_attach = function(client, bufnr)
-    -- enable auto formating
-
     if vim.api.nvim_eval("exists('g:necovim_disable_lsp_autoformat')") == 1 then
         if vim.api.nvim_eval("g:necovim_disable_lsp_autoformat") == 1 then
             return
         end
     else
-        if client.server_capabilities.document_formatting then
-            vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-        end
+        local format = require 'lsp-format'
+        format.setup {
+            typescript = { tab_width = 4 },
+            yaml = { tab_width = 2 },
+            dart = { tab_width = 2 },
+            go = { tab_width = 4 },
+        }
+        format.on_attach(client)
     end
 end
 
@@ -53,7 +56,7 @@ cmp.setup {
 
     snippet = {
         expand = function(args)
-            vim.fn["vsnip#anonymouse"](args.body)
+            -- vim.fn["vsnip#anonymouse"](args.body)
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
@@ -78,11 +81,11 @@ cmp.setup {
             { name = 'vsnip' }
         },
         {
-        { name = 'buffer', option = {
-            get_bufnrs = function() return { vim.api.nvim_get_current_buf() } end
-         } },
-        { name = 'look', keyword_length = 2, option = { convert_case = true, loud = false } }
-    }
+            { name = 'buffer', option = {
+                get_bufnrs = function() return { vim.api.nvim_get_current_buf() } end
+            } },
+            { name = 'look', keyword_length = 2, option = { convert_case = true, loud = false } }
+        }
     ),
 
     view = {
@@ -127,12 +130,15 @@ end)
 local trouble = require 'trouble'
 trouble.setup {}
 
--- Lsp Null
--- local null_ls = require 'null-ls'
--- null_ls.setup {
---    on_attach = function(c)
---        if c.resolved_capabilities.document_formatting then
---            vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
---        end
---    end,
--- }
+-- Null-ls
+local null_ls = require 'null-ls'
+null_ls.setup {
+    on_attach = function(client)
+
+    end,
+    sources = {
+        require 'null-ls'.builtins.formatting.stylua,
+        require 'null-ls'.builtins.diagnostics.eslint,
+        require 'null-ls'.builtins.completion.spell,
+    }
+}

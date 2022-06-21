@@ -33,10 +33,10 @@ syntax on
 set nowrap
 set t_Co=256
 set t_ut=
-hi NonText guifg=bg
-let g:catppuccin_flavour = "moca"
-colorscheme catppuccin
+"let g:material_style = "mocca"
+colorscheme gruvbox
 ]])
+-- hi NonText guifg=bg
 
 -- colorscheme options for catppuccin
 -- vim.g.catppuccin_flavour = 'moca'
