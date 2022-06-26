@@ -34,7 +34,7 @@ set nowrap
 set t_Co=256
 set t_ut=
 "let g:material_style = "mocca"
-colorscheme gruvbox
+colorscheme ayu
 ]])
 -- hi NonText guifg=bg
 

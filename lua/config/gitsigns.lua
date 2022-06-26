@@ -1,3 +1,7 @@
 require'gitsigns'.setup {
-    -- word_diff = true,
+    signcolumn = true,
+    word_diff = false,
+    numhl = true,
+    linehl = false,
+    current_line_blame = true,
 }
