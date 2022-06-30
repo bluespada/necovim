@@ -33,8 +33,9 @@ syntax on
 set nowrap
 set t_Co=256
 set t_ut=
-"let g:material_style = "mocca"
-colorscheme ayu
+"let g:material_style = "oceanic"
+let g:ocdedark_conservative = 1
+colorscheme codedark
 ]])
 -- hi NonText guifg=bg
 

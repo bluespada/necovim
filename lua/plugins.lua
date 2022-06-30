@@ -36,6 +36,7 @@ return require("packer").startup(function(use)
         'tomasiser/vim-code-dark', 'ayu-theme/ayu-vim', 'bluespada/justblack.vim' } -- theme
     use { 'catppuccin/nvim', as = 'catppuccin' } --theme
     use { 'kyazdani42/nvim-tree.lua', 'preservim/nerdcommenter' } -- file & commenter
+    use { 'preservim/tagbar' } -- tagbar
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- telescope
     use { 'glepnir/dashboard-nvim' } -- dashboard
     use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } -- bar plugins
@@ -46,9 +47,10 @@ return require("packer").startup(function(use)
     use { 'neovim/nvim-lspconfig' } -- lspconfig
     use { 'hrsh7th/nvim-cmp',
         requires = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
-            'octaltree/cmp-look', 'L3MON4D3/LuaSnip' } } -- new completion
+            'octaltree/cmp-look', 'L3MON4D3/LuaSnip', 'SirVer/ultisnips', 'hrsh7th/cmp-nvim-lsp-signature-help',
+            'quangnguyen30192/cmp-nvim-ultisnips' } } -- new completion
     -- codeaction is disable because currently not support on neovim 0.6.0
-    use { 'tami5/lspsaga.nvim' } -- fork from lsp saga
+    use { 'glepnir/lspsaga.nvim' } -- fork from lsp saga
     use { 'jose-elias-alvarez/null-ls.nvim' } -- null ls
     use { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } } -- trouble vim
     use { 'onsails/lspkind-nvim' } -- lsp kind
@@ -75,4 +77,5 @@ return require("packer").startup(function(use)
     use { 'rcarriga/nvim-notify' } -- notify
     use { 'natecraddock/sessions.nvim', requires = { 'rcarriga/nvim-notify' } } -- session manager
     use { 'j-hui/fidget.nvim' } -- Eye candy for the impatient
+    use { 'jceb/vim-orgmode', requires = { 'tpope/vim-speeddating' } } -- Org Mode
 end)

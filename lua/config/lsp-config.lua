@@ -42,12 +42,28 @@ lspkind.init {}
 
 -- setup cmp with config lspkind is a default formatting and its auto completion
 local cmp = require 'cmp'
-
+local cmp_ultisnip = require 'cmp_nvim_ultisnips.mappings'
+local has_words_before = function()
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
 cmp.setup {
+    window = {
+        completion = {
+            winhighlight = "Normal:Pmenu,FloatingBorder:Pmenu,Search:None",
+            col_offset = -3,
+            side_padding = 0,
+        }
+    },
+
     mapping = {
         ['<Tab>'] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
+            elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+                vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
+            elseif has_words_before() then
+                cmp.complete()
             else
                 fallback()
             end
@@ -56,29 +72,40 @@ cmp.setup {
 
     snippet = {
         expand = function(args)
-            -- vim.fn["vsnip#anonymouse"](args.body)
+            vim.fn["vsnip#anonymouse"](args.body)
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
 
     formatting = {
-        format = lspkind.cmp_format({
-            with_text = true,
-            menu = ({
-                buffer = "[Buffer]",
-                nvim_lsp = "[LSP]",
-                luasnip = "[LuaSnip]",
-                nvim_lua = "[Lua]",
-                latex_symbols = "[Latex]",
-            }),
-        }),
+        fields = { 'kind', 'abbr', 'menu' },
+        format = function(entry, vim_item)
+            local kind = require 'lspkind'.cmp_format({
+                with_text = true,
+                mode = 'symbol_text',
+                menu = ({
+                    buffer = "[Buffer]",
+                    nvim_lsp = "[LSP]",
+                    luasnip = "[LuaSnip]",
+                    nvim_lua = "[Lua]",
+                    latex_symbols = "[Latex]",
+                }),
+            })(entry, vim_item)
+            local strings = vim.split(kind.kind, "%s", { trimempty = true })
+            kind.kind = " " .. strings[1] .. " "
+            kind.menu = "    (" .. strings[2] .. ")"
+
+            return kind
+        end,
     },
 
     sources = cmp.config.sources(
         {
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
-            { name = 'vsnip' }
+            { name = 'vsnip' },
+            { name = 'ultisnips' },
+            { name = 'nvim_lsp_signature_help' },
         },
         {
             { name = 'buffer', option = {
@@ -90,9 +117,26 @@ cmp.setup {
 
     view = {
         entries = 'native'
-    }
-
+    },
 }
+
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    },
+    view = {
+        entries = { name = 'wildmenu', separator = '|' }
+    }
+})
+
+cmp.setup.cmdline(':', {
+    completion = { autocomplete = false },
+    sources = cmp.config.sources({ { name = 'path' }, { name = 'cmdline' } }),
+    view = {
+        entries = { name = 'native', separator = '|' }
+    }
+})
 
 local lsp_cmp = require 'cmp_nvim_lsp'
 
@@ -139,6 +183,6 @@ null_ls.setup {
     sources = {
         require 'null-ls'.builtins.formatting.stylua,
         require 'null-ls'.builtins.diagnostics.eslint,
-        require 'null-ls'.builtins.completion.spell,
+        -- require 'null-ls'.builtins.completion.spell,
     }
 }
