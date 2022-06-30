@@ -33,7 +33,7 @@ local config = {
     options = {
         -- Disable sections and component separators
         component_separators = "",
-        section_separators = "",
+        section_separators = { left = "", right = "" },
         theme = 'auto',
     },
     sections = {
