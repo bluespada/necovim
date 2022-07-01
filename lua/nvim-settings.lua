@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 -- undofiles
+opt.fsync = true
 opt.undofile = true
 opt.completeopt = 'menuone,noinsert,noselect'
 -- configuration tab
@@ -23,7 +24,13 @@ opt.title = false
 opt.encoding = 'utf-8'
 opt.cursorline = true
 opt.list = true
--- opt.foldmethod='syntax'
+opt.ignorecase = true
+opt.colorcolumn = '80'
+opt.splitbelow = true
+opt.splitright = true
+opt.scrolloff = 3
+opt.numberwidth = 4
+-- opt.foldmethod = 'syntax'
 vim.cmd([[
 autocmd!
 filetype on
@@ -34,23 +41,25 @@ set nowrap
 set t_Co=256
 set t_ut=
 "let g:material_style = "oceanic"
-let g:ocdedark_conservative = 1
+""let g:tokyonight_style = "night"
+""let g:tokyonight_italic_comments = 1
+""let g:tokyonight_transparent = 1
 colorscheme codedark
+hi default link UfoFoldedEllipsis Comment
 ]])
--- hi NonText guifg=bg
 
 -- colorscheme options for catppuccin
 -- vim.g.catppuccin_flavour = 'moca'
 -- require'catppuccin'.setup{ transparent_background = true, term_colors = true, integrations = { lsp_saga = true } }
 
 -- code folding
---[[vim.cmd([[]]
---[[augroup Autoview]]
---[[autocmd!]]
---[[autocmd BufWritePre,BufWinLeave ?* silent! mkview]]
---[[autocmd BufWinEnter ?* silent! laodview]]
---[[augroup END]]
---[[<])]]
+--vim.cmd([[
+--augroup Autoview
+--autocmd!
+--autocmd BufWritePre,BufWinLeave ?* silent! mkview
+--autocmd BufWinEnter ?* silent! laodview
+--augroup END
+--]])
 
 -- auto makedir if save file not founds
 vim.cmd([[

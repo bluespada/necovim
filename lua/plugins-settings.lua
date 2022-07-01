@@ -42,3 +42,6 @@ require 'config/toggleterm'
 
 -- fidget
 require 'config/fidget'
+
+-- which-key
+require 'config.whichkey'

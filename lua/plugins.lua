@@ -33,7 +33,7 @@ return require("packer").startup(function(use)
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'cohama/lexima.vim' } -- autoclose plugins
     use { 'marko-cerovac/material.nvim', 'metalelf0/jellybeans-nvim', 'morhetz/gruvbox', 'joshdick/onedark.vim',
-        'tomasiser/vim-code-dark', 'ayu-theme/ayu-vim', 'bluespada/justblack.vim' } -- theme
+        'tomasiser/vim-code-dark', 'ayu-theme/ayu-vim', 'bluespada/justblack.vim', 'folke/tokyonight.nvim' } -- theme
     use { 'catppuccin/nvim', as = 'catppuccin' } --theme
     use { 'kyazdani42/nvim-tree.lua', 'preservim/nerdcommenter' } -- file & commenter
     use { 'preservim/tagbar' } -- tagbar
@@ -54,6 +54,11 @@ return require("packer").startup(function(use)
     use { 'jose-elias-alvarez/null-ls.nvim' } -- null ls
     use { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } } -- trouble vim
     use { 'onsails/lspkind-nvim' } -- lsp kind
+    use { 'kevinhwang91/nvim-ufo', requires = { 'kevinhwang91/promise-async' }, config = function()
+
+        require 'ufo'.setup()
+    end } -- codefolding
+    use { 'folke/which-key.nvim' } -- whichkey
     use { 'williamboman/nvim-lsp-installer' } -- lsp auto installer
     use { 'lukas-reineke/lsp-format.nvim' } -- autoformatter
     use { 'ray-x/lsp_signature.nvim' } -- lsp signature

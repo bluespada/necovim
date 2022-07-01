@@ -55,6 +55,10 @@ map('n', '<leader>tc', ':TroubleClose<CR>', { silent = true, noremap = true })
 map('n', '<leader>gdd', ':Git add .<CR>', { silent = true, noremap = true })
 map('n', '<leader>gdc', ':Git commit<CR>', { silent = true, noremap = true })
 -- ToggleTerm
-map('n', '<leader>;', ':ToggleTerm <CR>', { silent = true, noremap = true })
+map('n', '<leader>;', ':ToggleTerm<CR>', { silent = true, noremap = true })
 -- Tagbar
-map('n', '<leader>tb', ':TagbarToggle <CR>', { silent = true, noremap = true })
+map('n', '<leader>tb', ':TagbarToggle<CR>', { silent = true, noremap = true })
+-- Trouble
+map('n', '<leader>tr', ':TroubleToggle<CR>', { silent = true, noremap = true })
+-- exit on terminal
+map('t', '<C-n>', '<C-\\><C-n>', { silent = true, noremap = true })
