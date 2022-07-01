@@ -7,5 +7,13 @@ require 'which-key'.setup {
     window = {
         border = "shadow",
         position = "bottom",
+    },
+    key_label = {
+        ["<space>"] = "SPC",
+        ["<cr>"] = "RET",
+        ["<tab>"] = "TAB",
+    },
+    icons = {
+        group = " "
     }
 }
