@@ -1,4 +1,4 @@
-local config = require'necovim.config'
+local config = require 'necovim.config'
 -- plugins
 config.plugins = {
     { 'bluespada/justblack.vim' },
@@ -22,7 +22,7 @@ config.nowrap = true
 -- kebind settings
 -- map is regular neovim keymap bind
 -- wmap is a whichkeymap
-config.keybind = function(map,wmap)
+config.keybind = function(map, wmap)
     -- nerd Tree shortcuts
     map('n', '<leader>nt', ':NvimTreeToggle<CR>', { silent = true, noremap = true })
     map('n', '<leader>nf', ':NvimTreeFocus<CR>', { silent = true, noremap = true })
