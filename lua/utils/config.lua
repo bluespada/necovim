@@ -3,7 +3,7 @@ local packer = require 'utils.packer'
 local map = vim.api.nvim_set_keymap
 function C.init(N, c)
     if not packer.bootstrap then
-	local wmap = require 'which-key'.register
+        local wmap = require 'which-key'.register
         if c.colorscheme then
             N.cmd('colorscheme ' .. c.colorscheme)
         end
@@ -45,6 +45,16 @@ function C.init(N, c)
     N.opt.splitright = true
     N.opt.scrolloff = 3
     N.opt.numberwidth = 4
+    vim.cmd([[
+autocmd!
+filetype on
+filetype indent on
+filetype plugin on
+syntax on
+set nowrap
+set t_Co=256
+set t_ut=
+    ]])
 end
 
 return C
