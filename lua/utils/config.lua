@@ -1,9 +1,9 @@
 local C = {}
 local packer = require 'utils.packer'
 local map = vim.api.nvim_set_keymap
-local wmap = require 'which-key'.register
 function C.init(N, c)
     if not packer.bootstrap then
+	local wmap = require 'which-key'.register
         if c.colorscheme then
             N.cmd('colorscheme ' .. c.colorscheme)
         end

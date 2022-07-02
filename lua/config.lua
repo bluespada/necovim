@@ -2,10 +2,11 @@ local config = require 'necovim.config'
 -- plugins
 config.plugins = {
     { 'bluespada/justblack.vim' },
-    { 'joshdick/onedark.vim' }
+    { 'joshdick/onedark.vim' },
+    { 'morhetz/gruvbox' },
 }
 -- colorscheme
-config.colorscheme = 'onedark'
+config.colorscheme = 'gruvbox'
 
 -- termguicolor
 config.termguicolors = true
