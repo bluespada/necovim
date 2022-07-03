@@ -3,6 +3,7 @@ return {
         require 'plugins.dashboard'
         require 'plugins.buffersline'
         require 'plugins.lualine'
+        require 'plugins.colorizer'
         require 'plugins.lsp'
         require 'plugins.smoothscroll'
         require 'plugins.moveline'
