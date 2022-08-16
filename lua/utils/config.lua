@@ -4,6 +4,8 @@ local map = vim.api.nvim_set_keymap
 function C.init(N, c)
     if not packer.bootstrap then
         local wmap = require 'which-key'.register
+        -- intitizlie configs
+        c.init()
         if c.colorscheme then
             N.cmd('colorscheme ' .. c.colorscheme)
         end

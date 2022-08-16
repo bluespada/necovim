@@ -6,10 +6,21 @@ config.plugins = {
     { 'morhetz/gruvbox' },
 }
 -- colorscheme
-config.colorscheme = 'gruvbox'
+config.colorscheme = 'justblack'
+
+config.init = function()
+    -- custom configuration here
+    vim.g.gruvbox_contrast_dark = "medium"
+end
 
 -- termguicolor
 config.termguicolors = true
+
+-- note
+config.wiki = {
+    path = "~/.note",
+    extension = ".md",
+}
 
 -- shell
 config.shell = 'fish'

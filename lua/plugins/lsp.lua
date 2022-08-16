@@ -71,24 +71,17 @@ cmp.setup {
 
     formatting = {
         fields = { 'kind', 'abbr', 'menu' },
-        format = function(entry, vim_item)
-            local kind = require 'lspkind'.cmp_format({
-                with_text = true,
-                mode = 'symbol_text',
-                menu = ({
-                    buffer = "[Buffer]",
-                    nvim_lsp = "[LSP]",
-                    luasnip = "[LuaSnip]",
-                    nvim_lua = "[Lua]",
-                    latex_symbols = "[Latex]",
-                }),
-            })(entry, vim_item)
-            local strings = vim.split(kind.kind, "%s", { trimempty = true })
-            kind.kind = " " .. strings[1] .. " "
-            kind.menu = "    (" .. strings[2] .. ")"
+        format = lspkind.cmp_format({
+            with_text = true,
+            menu = ({
+                buffer = "[Buffer]",
+                nvim_lsp = "[LSP]",
+                luasnip = "[LuaSnip]",
+                nvim_lua = "[Lua]",
+                latex_symbols = "[Latex]",
+            }),
 
-            return kind
-        end,
+        }),
     },
 
     sources = cmp.config.sources(
@@ -168,7 +161,7 @@ null_ls.setup {
     end,
     sources = {
         require 'null-ls'.builtins.formatting.stylua,
-        require 'null-ls'.builtins.diagnostics.eslint,
+        -- require 'null-ls'.builtins.diagnostics.eslint,
         -- require 'null-ls'.builtins.completion.spell,
     }
 }

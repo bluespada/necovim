@@ -2,6 +2,9 @@ return {
     -- users color scheme
     colorscheme = "default",
 
+    -- config init
+    init = function()end,
+
     -- plugins
     plugins = {},
 

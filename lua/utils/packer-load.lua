@@ -21,7 +21,7 @@ load.core = {
         requires = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
             'octaltree/cmp-look', 'L3MON4D3/LuaSnip', 'SirVer/ultisnips', 'hrsh7th/cmp-nvim-lsp-signature-help',
             'quangnguyen30192/cmp-nvim-ultisnips' } }, -- new completion
-    { 'glepnir/lspsaga.nvim' }, -- fork from lsp saga
+    { 'glepnir/lspsaga.nvim' }, -- lsp saga
     { 'jose-elias-alvarez/null-ls.nvim' }, -- null ls
     { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }, -- trouble vim
     { 'onsails/lspkind-nvim' }, -- lsp kind
@@ -36,7 +36,7 @@ load.core = {
     { 'francoiscabrol/ranger.vim' }, -- vim ranger
     { 'jghauser/mkdir.nvim', config = function() require 'mkdir' end }, -- makedir when folder not exist
     { 'itchyny/calendar.vim' }, -- calendar
-    { "akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
+    { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
         require("toggleterm").setup()
     end },
     { 'rcarriga/nvim-notify' }, -- notify
