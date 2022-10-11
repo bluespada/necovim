@@ -2,20 +2,20 @@ local load = {}
 
 load.core = {
     { 'wbthomason/packer.nvim' }, -- packer
-    { 'famiu/nvim-reload', requires = { 'nvim-lua/plenary.nvim', opt = true } }, -- reload plugins
+    { 'nvim-lua/plenary.nvim' }, -- plenary plugins
     { 'ryanoasis/vim-devicons' }, -- vim icons
     { 'norcalli/nvim-colorizer.lua' }, -- colorizer
     { 'tpope/vim-fugitive' }, -- git utils
-    { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } },
+    { 'lewis6991/gitsigns.nvim' },
     { 'cohama/lexima.vim' }, -- autoclose plugins
     { 'kyazdani42/nvim-tree.lua', 'preservim/nerdcommenter' }, -- file & commenter
     { 'preservim/tagbar' }, -- tagbar
-    { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }, -- telescope
+    { 'nvim-telescope/telescope.nvim' }, -- telescope
     { 'glepnir/dashboard-nvim' }, -- dashboard
     { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }, -- bar plugins
     { 'akinsho/bufferline.nvim' }, -- tabline plugins
     { 'psliwka/vim-smoothie' }, -- smooth scrolls
-    { 'thmsmlr/nvim-treesitter' }, -- treesitter forked | temporary use this forks for full working with dart code.
+    { 'nvim-treesitter/nvim-treesitter' }, -- treesitter forked | temporary use this forks for full working with dart code.
     { 'neovim/nvim-lspconfig' }, -- lspconfig
     { 'hrsh7th/nvim-cmp',
         requires = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
