@@ -1,4 +1,4 @@
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- global setup nvim_lsp
@@ -130,7 +130,7 @@ require 'lspsaga'.init_lsp_saga({
 local lsp_cmp = require 'cmp_nvim_lsp'
 
 nvim_lsp.vimls.setup {
-    capabilities = lsp_cmp.update_capabilities(capabilities),
+    capabilities = lsp_cmp.default_capabilities(),
 }
 
 local lsp_installer = require 'nvim-lsp-installer'

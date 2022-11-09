@@ -4,13 +4,16 @@ config.plugins = {
     { 'bluespada/justblack.vim' },
     { 'joshdick/onedark.vim' },
     { 'morhetz/gruvbox' },
+    { 'rktjmp/lush.nvim' },
+    { 'kartikp10/noctis.nvim' },
+    { 'arzg/vim-colors-xcode' },
 }
 -- colorscheme
-config.colorscheme = 'justblack'
+config.colorscheme = 'xcodedarkhc'
 
 config.init = function()
     -- custom configuration here
-    vim.g.gruvbox_contrast_dark = "medium"
+    -- vim.g.gruvbox_contrast_dark = "medium"
 end
 
 -- termguicolor
