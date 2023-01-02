@@ -9,11 +9,14 @@ config.plugins = {
     { 'arzg/vim-colors-xcode' },
 }
 -- colorscheme
-config.colorscheme = 'xcodedarkhc'
+config.colorscheme = 'gruvbox'
 
 config.init = function()
     -- custom configuration here
-    -- vim.g.gruvbox_contrast_dark = "medium"
+    vim.g.gruvbox_italic = true
+    vim.g.gruvbox_transparent_bg = false
+    vim.g.gruvbox_contrast_dark = "medium"
+    -- vim.cmd([[autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE]])
 end
 
 -- termguicolor
