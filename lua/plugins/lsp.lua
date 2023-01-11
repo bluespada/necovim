@@ -50,21 +50,21 @@ cmp.setup {
 
     mapping = {
         ['<Tab>'] = function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            -- elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-            --     vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
-            elseif has_words_before() then
-                cmp.complete()
-            else
-                fallback()
-            end
+           if cmp.visible() then
+               cmp.select_next_item()
+            elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+                vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
+           elseif has_words_before() then
+               cmp.complete()
+           else
+               fallback()
+           end
         end
     },
 
     snippet = {
         expand = function(args)
-            vim.fn["vsnip#anonymouse"](args.body)
+            -- vim.fn["vsnip#anonymouse"](args.body)
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
@@ -88,8 +88,8 @@ cmp.setup {
         {
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
-            { name = 'vsnip' },
-            { name = 'ultisnips' },
+            -- { name = 'vsnip' },
+            -- { name = 'ultisnips' },
             { name = 'nvim_lsp_signature_help' },
         },
         {
