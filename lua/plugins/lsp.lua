@@ -52,8 +52,8 @@ cmp.setup {
         ['<Tab>'] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-                vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
+            -- elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+            --     vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
             elseif has_words_before() then
                 cmp.complete()
             else
