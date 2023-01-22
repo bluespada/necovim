@@ -27,18 +27,18 @@ local on_attach = function(client, bufnr)
         format.on_attach(client)
     end
 end
-
 -- lspkind
 local lspkind = require 'lspkind'
 lspkind.init {}
 
 -- setup cmp with config lspkind is a default formatting and its auto completion
-local cmp = require 'cmp'
-local cmp_ultisnip = require 'cmp_nvim_ultisnips.mappings'
+local luasnip = require("luasnip")
 local has_words_before = function()
+    unpack = unpack or table.unpack
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
+local cmp = require 'cmp'
 cmp.setup {
     window = {
         completion = {
@@ -50,15 +50,20 @@ cmp.setup {
 
     mapping = {
         ['<Tab>'] = function(fallback)
-           if cmp.visible() then
-               cmp.select_next_item()
-            elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-                vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
-           elseif has_words_before() then
-               cmp.complete()
-           else
-               fallback()
-           end
+            if cmp.visible() then
+                local entry = cmp.get_selected_entry()
+                if not entry then
+                    cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+                else
+                    cmp.confirm()
+                end
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jumpable()
+            elseif has_words_before() then
+                cmp.complete()
+            else
+                fallback()
+            end
         end
     },
 
@@ -123,7 +128,7 @@ cmp.setup.cmdline(':', {
     }
 })
 
-require 'lspsaga'.init_lsp_saga({
+require 'lspsaga'.setup({
 
 })
 

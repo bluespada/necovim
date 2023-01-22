@@ -19,8 +19,7 @@ load.core = {
     { 'neovim/nvim-lspconfig' }, -- lspconfig
     { 'hrsh7th/nvim-cmp',
         requires = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
-            'octaltree/cmp-look', 'L3MON4D3/LuaSnip', 'SirVer/ultisnips', 'hrsh7th/cmp-nvim-lsp-signature-help',
-            'quangnguyen30192/cmp-nvim-ultisnips' } }, -- new completion
+            'octaltree/cmp-look', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-nvim-lsp-signature-help' } }, -- new completion
     { 'glepnir/lspsaga.nvim' }, -- lsp saga
     { 'jose-elias-alvarez/null-ls.nvim' }, -- null ls
     { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }, -- trouble vim
