@@ -24,6 +24,8 @@ function C.init(N, c)
     N.opt.fsync = c.fsync
     N.opt.undofile = true
     N.opt.completeopt = 'menuone,noinsert,noselect'
+    N.opt.smartcase = true
+    N.opt.clipboard = 'unnamedplus'
     N.opt.tabstop = 4
     N.opt.softtabstop = 0
     N.opt.expandtab = true

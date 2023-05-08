@@ -21,7 +21,6 @@ load.core = {
         requires = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
             'octaltree/cmp-look', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-nvim-lsp-signature-help' } }, -- new completion
     { 'glepnir/lspsaga.nvim' }, -- lsp saga
-    { 'jose-elias-alvarez/null-ls.nvim' }, -- null ls
     { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }, -- trouble vim
     { 'onsails/lspkind-nvim' }, -- lsp kind
     { 'folke/which-key.nvim' }, -- whichkey
@@ -42,7 +41,10 @@ load.core = {
     { 'natecraddock/sessions.nvim', requires = { 'rcarriga/nvim-notify' } }, -- session manager
     { 'j-hui/fidget.nvim' }, -- Eye candy for the impatient
     { 'jceb/vim-orgmode', requires = { 'tpope/vim-speeddating' } }, -- Org Mode
+    -- copilot alternative
+    { 'Exafunction/codeium.vim' }
 }
+
 
 function load.load(bootstrap, users)
     require 'packer'.startup(function(use)

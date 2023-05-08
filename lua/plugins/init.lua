@@ -16,5 +16,6 @@ return {
         require 'plugins.toggleterms'
         require 'plugins.treesitter'
         require 'plugins.whichkey'
+        require 'plugins.codeium'
     end
 }
