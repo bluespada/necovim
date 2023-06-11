@@ -11,7 +11,7 @@ load.core = {
     { 'kyazdani42/nvim-tree.lua', 'preservim/nerdcommenter' }, -- file & commenter
     { 'preservim/tagbar' }, -- tagbar
     { 'nvim-telescope/telescope.nvim' }, -- telescope
-    { 'glepnir/dashboard-nvim' }, -- dashboard
+    { 'glepnir/dashboard-nvim', requires = { "nvim-tree/nvim-web-devicons" } }, -- dashboard
     { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }, -- bar plugins
     { 'akinsho/bufferline.nvim' }, -- tabline plugins
     { 'psliwka/vim-smoothie' }, -- smooth scrolls
@@ -39,7 +39,7 @@ load.core = {
     end },
     { 'rcarriga/nvim-notify' }, -- notify
     { 'natecraddock/sessions.nvim', requires = { 'rcarriga/nvim-notify' } }, -- session manager
-    { 'j-hui/fidget.nvim' }, -- Eye candy for the impatient
+    { 'j-hui/fidget.nvim', tag = 'legacy' }, -- Eye candy for the impatient
     { 'jceb/vim-orgmode', requires = { 'tpope/vim-speeddating' } }, -- Org Mode
     -- copilot alternative
     { 'Exafunction/codeium.vim' }
