@@ -42,7 +42,7 @@ load.core = {
     { 'j-hui/fidget.nvim', tag = 'legacy' }, -- Eye candy for the impatient
     { 'jceb/vim-orgmode', requires = { 'tpope/vim-speeddating' } }, -- Org Mode
     -- copilot alternative
-    { 'Exafunction/codeium.vim' }
+    -- { 'Exafunction/codeium.vim' }
 }
 
 
