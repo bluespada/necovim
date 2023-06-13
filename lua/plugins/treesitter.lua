@@ -4,10 +4,10 @@ require 'nvim-treesitter.configs'.setup {
     auto_install = true,
     highlight = {
         enable = true,
-        disable = {}
+        disable = {"dart"}
     },
     indent = {
         enable = true,
-        disable = {}
+        disable = {"dart"}
     }
 }
