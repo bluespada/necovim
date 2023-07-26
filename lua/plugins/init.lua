@@ -17,5 +17,6 @@ return {
         require 'plugins.treesitter'
         require 'plugins.whichkey'
         require 'plugins.codeium'
+        require 'plugins.nvim-ts-autotag'
     end
 }
