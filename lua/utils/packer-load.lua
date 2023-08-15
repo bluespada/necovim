@@ -20,7 +20,7 @@ load.core = {
     { 'hrsh7th/nvim-cmp',
         requires = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
             'octaltree/cmp-look', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-nvim-lsp-signature-help' } }, -- new completion
-    { 'glepnir/lspsaga.nvim' }, -- lsp saga
+    { 'nvimdev/lspsaga.nvim' }, -- lsp saga
     { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }, -- trouble vim
     { 'onsails/lspkind-nvim' }, -- lsp kind
     { 'folke/which-key.nvim' }, -- whichkey
