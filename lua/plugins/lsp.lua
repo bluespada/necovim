@@ -236,22 +236,25 @@ nvim_lsp.vimls.setup {
     capabilities = lsp_cmp.default_capabilities(),
 }
 
-local lsp_installer = require 'nvim-lsp-installer'
-lsp_installer.on_server_ready(function(server)
-    local opts = {
-        on_attach = on_attach,
-        capabilities = capabilities
-    }
+require'mason'.setup {
 
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
+}
+local lspconfig = require'mason-lspconfig'
+lspconfig.setup {
 
-    -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
-    server:setup(opts)
-    vim.cmd [[ do User LspAttachBuffers ]]
-end)
+}
+-- automatic setup
+lspconfig.setup_handlers {
+        -- The first entry (without a key) will be the default handler
+        -- and will be called for each installed server that doesn't have
+        -- a dedicated handler.
+        function (server_name) -- default handler (optional)
+            require("lspconfig")[server_name].setup {}
+        end,
+        -- Next, you can provide a dedicated handler for specific servers.
+        -- For example, a handler override for the `rust_analyzer`:
+}
+
 -- Lsp Trouble
 local trouble = require 'trouble'
 trouble.setup {}

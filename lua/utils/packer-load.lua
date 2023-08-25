@@ -24,7 +24,7 @@ load.core = {
     { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }, -- trouble vim
     { 'onsails/lspkind-nvim' }, -- lsp kind
     { 'folke/which-key.nvim' }, -- whichkey
-    { 'williamboman/nvim-lsp-installer' }, -- lsp auto installer
+    { 'williamboman/mason.nvim', requires = { 'williamboman/mason-lspconfig.nvim'  } }, -- lsp auto installer
     { 'lukas-reineke/lsp-format.nvim' }, -- autoformatter
     { 'ray-x/lsp_signature.nvim' }, -- lsp signature
     { 'khaveesh/vim-fish-syntax' }, -- fish shell highlighting
