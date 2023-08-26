@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-    ensure_installed = { 'tsx', 'vim', 'cpp', 'c', 'python', 'lua', 'bash', 'javascript', 'css', 'html', 'php','typescript' },
+    ensure_installed = { 'markdown', 'markdown_inline' },
     sync_install = true,
     auto_install = true,
     highlight = {
