@@ -243,6 +243,7 @@ local lspconfig = require'mason-lspconfig'
 lspconfig.setup {
 
 }
+
 -- automatic setup
 lspconfig.setup_handlers {
         -- The first entry (without a key) will be the default handler
@@ -254,6 +255,10 @@ lspconfig.setup_handlers {
         -- Next, you can provide a dedicated handler for specific servers.
         -- For example, a handler override for the `rust_analyzer`:
 }
+
+-- configuration for dart
+local df_tools = require 'flutter-tools'
+df_tools.setup {}
 
 -- Lsp Trouble
 local trouble = require 'trouble'

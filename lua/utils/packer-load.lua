@@ -43,6 +43,13 @@ load.core = {
     { 'jceb/vim-orgmode', requires = { 'tpope/vim-speeddating' } }, -- Org Mode
     { 'windwp/nvim-ts-autotag' }, -- autoclose tag
     -- copilot alternative
+    {
+        'akinsho/flutter-tools.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+    }
     -- { 'Exafunction/codeium.vim' }
 }
 
