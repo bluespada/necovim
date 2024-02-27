@@ -3,10 +3,9 @@ local config = require 'necovim.config'
 config.plugins = {
     { 'junegunn/seoul256.vim' },
     { "ellisonleao/gruvbox.nvim" },
-    { "LunarVim/horizon.nvim" }
 }
 -- colorscheme
-config.colorscheme = 'horizon'
+config.colorscheme = 'gruvbox'
 
 config.init = function()
     -- custom configuration here
