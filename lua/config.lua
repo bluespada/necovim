@@ -3,16 +3,17 @@ local config = require 'necovim.config'
 config.plugins = {
     { 'junegunn/seoul256.vim' },
     { "ellisonleao/gruvbox.nvim" },
+    { "LunarVim/horizon.nvim" }
 }
 -- colorscheme
-config.colorscheme = 'gruvbox'
+config.colorscheme = 'horizon'
 
 config.init = function()
     -- custom configuration here
-    vim.g.gruvbox_italic = true
-    vim.g.gruvbox_transparent_bg = false
-    vim.g.gruvbox_contrast_dark = "medium"
-    -- vim.cmd([[autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE]])
+    --vim.g.gruvbox_italic = true
+    --vim.g.gruvbox_transparent_bg = false
+    --vim.g.gruvbox_contrast_dark = "medium"
+    vim.cmd([[autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE]])
 end
 
 -- termguicolor
