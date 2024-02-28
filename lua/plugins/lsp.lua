@@ -212,8 +212,10 @@ require 'lspsaga'.setup({
         theme = 'round',
         -- this option only work in neovim 0.9
         title = true,
+        devicon = true,
+        lines = { '┗', '┣', '┃', '━', '┏' },
         -- border type can be single,double,rounded,solid,shadow.
-        border = 'rounded',
+        border = 'single',
         winblend = 0,
         expand = '',
         collapse = '',
