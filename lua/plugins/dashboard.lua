@@ -1,8 +1,5 @@
 local dashboard = require'dashboard'
 
--- hide indent line
-vim.g.indent_blankline_filetype_exclude = {'dashboard'}
-
 local title ={
     '',
     '⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕',
@@ -39,6 +36,6 @@ dashboard.setup{
         },
     },
     hide = {
-
+        tabline,
     },
 }

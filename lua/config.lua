@@ -3,16 +3,18 @@ local config = require 'necovim.config'
 config.plugins = {
     { 'junegunn/seoul256.vim' },
     { "ellisonleao/gruvbox.nvim" },
+    { "ayu-theme/ayu-vim" },
 }
 -- colorscheme
-config.colorscheme = 'gruvbox'
+config.colorscheme = 'ayu'
 
 config.init = function()
     -- custom configuration here
     --vim.g.gruvbox_italic = true
     --vim.g.gruvbox_transparent_bg = false
     --vim.g.gruvbox_contrast_dark = "medium"
-    vim.cmd([[autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE]])
+    vim.g.ayu = "mirage"
+    -- vim.cmd([[autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE]])
 end
 
 -- termguicolor
