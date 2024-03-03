@@ -220,14 +220,14 @@ require 'lspsaga'.setup({
         expand = '',
         collapse = '',
         preview = ' ',
-        code_action = '💡',
+        -- code_action = '💡',
         diagnostic = '🐞',
         incoming = ' ',
         outgoing = ' ',
         colors = {
             --float window normal background color
-            normal_bg = '#282828',
-            black = '#1c1c19',
+            --normal_bg = '#282828',
+            --black = '#1c1c19',
         },
     }
 })
