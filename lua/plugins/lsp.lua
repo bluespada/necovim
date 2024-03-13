@@ -220,6 +220,8 @@ require 'lspsaga'.setup({
         expand = '',
         collapse = '',
         preview = ' ',
+        code_action = '',
+        code_action_prompt = { enable = false },
         -- code_action = '💡',
         diagnostic = '🐞',
         incoming = ' ',
