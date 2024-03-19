@@ -1,5 +1,6 @@
 return {
     function()
+        require 'plugins.autopair'
         require 'plugins.dashboard'
         require 'plugins.buffersline'
         require 'plugins.lualine'

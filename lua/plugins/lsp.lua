@@ -7,7 +7,7 @@ local nvim_lsp = require 'lspconfig'
 -- disable copilot if detected
 if vim.api.nvim_eval("exists('g:necovim_disable_copilot')") == 1 then
     if vim.api.nvim_eval("g:necovim_disable_lsp_copilot") == 1 then
-        vim.cmd(":Copilot disable")
+        vim.cmd(":Codeium Disable")
     end
 end
 
@@ -86,7 +86,18 @@ cmp.setup {
                 nvim_lua = "[Lua]",
                 latex_symbols = "[Latex]",
             }),
-
+            maxwidth = 50,
+            maxheight = 10,
+            before = function(entry, vim_item)
+                vim_item.menu = ({
+                    buffer = "[Buffer]",
+                    nvim_lsp = "[LSP]",
+                    luasnip = "[LuaSnip]",
+                    nvim_lua = "[Lua]",
+                    latex_symbols = "[Latex]",
+                })[entry.source.name]
+                return vim_item
+            end
         }),
     },
 
@@ -97,6 +108,7 @@ cmp.setup {
             -- { name = 'vsnip' },
             -- { name = 'ultisnips' },
             { name = 'nvim_lsp_signature_help' },
+            { name = 'codeium' },
         },
         {
             { name = 'buffer', option = {

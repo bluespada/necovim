@@ -34,6 +34,7 @@ load.core = {
     { 'francoiscabrol/ranger.vim' }, -- vim ranger
     { 'jghauser/mkdir.nvim', config = function() require 'mkdir' end }, -- makedir when folder not exist
     { 'itchyny/calendar.vim' }, -- calendar
+    { 'windwp/nvim-autopairs', requires = { 'hrsh7th/nvim-cmp' } },
     { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
         require("toggleterm").setup()
     end },
@@ -49,8 +50,8 @@ load.core = {
             'nvim-lua/plenary.nvim',
             'stevearc/dressing.nvim', -- optional for vim.ui.select
         },
-    }
-    -- { 'Exafunction/codeium.vim' }
+    },
+    { 'Exafunction/codeium.vim', requires = { 'nvim-lua/plenary.nvim', 'hrsh7th/nvim-cmp' }}
 }
 
 
